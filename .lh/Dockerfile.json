@@ -1,0 +1,18 @@
+{
+    "sourceFile": "Dockerfile",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1680717028451,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1680717028451,
+            "name": "Commit-0",
+            "content": "FROM node:16-alpine\r\n\r\nWORKDIR /frontend\r\n\r\nCOPY package*.json ./\r\n\r\nRUN npm install\r\n\r\nCOPY . .\r\n\r\nEXPOSE 3000\r\n\r\nCMD npm run dev"
+        }
+    ]
+}

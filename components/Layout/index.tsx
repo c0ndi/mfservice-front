@@ -5,6 +5,7 @@ import {useQuery} from "@tanstack/react-query";
 import {getData} from "@/utils/getData";
 import {ReactNode} from "react";
 import Contact from "@/components/Shared/Contact";
+import Head from "next/head";
 
 export default function Layout({ children }: { children: ReactNode }) {
    const {data, isLoading, isError} = useQuery({queryKey: ['shared'], queryFn: () => getData("/shared")})
@@ -29,6 +30,9 @@ export default function Layout({ children }: { children: ReactNode }) {
    return (
       <>
          {/*<Navbar links={data.links} />*/}
+         <Head>
+            <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+         </Head>
          <p>Nav</p>
          <main className={"pageWrapper"}>
             {children}
