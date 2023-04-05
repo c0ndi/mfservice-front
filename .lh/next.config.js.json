@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 3,
             "patches": [
                 {
                     "date": 1680716509246,
@@ -16,6 +16,10 @@
                 {
                     "date": 1680716598181,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n   reactStrictMode: true,\n   images: {\n     domains: [\"13.49.159.208\"]\n   },\n-    headers() {\n+  headers() {\n     return [\n       {\n         // matching all API routes\n         source: \"/api/:path*\",\n"
+                },
+                {
+                    "date": 1680716844803,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,21 +4,20 @@\n   reactStrictMode: true,\n   images: {\n     domains: [\"13.49.159.208\"]\n   },\n-  headers() {\n-    return [\n-      {\n-        // matching all API routes\n-        source: \"/api/:path*\",\n-        headers: [\n-          { key: \"Access-Control-Allow-Credentials\", value: \"true\" },\n-          { key: \"Access-Control-Allow-Origin\", value: \"*\" },\n-          { key: \"Access-Control-Allow-Methods\", value: \"GET,OPTIONS,PATCH,DELETE,POST,PUT\" },\n-          { key: \"Access-Control-Allow-Headers\", value: \"X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version\" },\n-        ]\n-      }\n-    ]\n-  }\n+async headers() {\n+\t\treturn [\n+\t\t\t{\n+\t\t\t\tsource: \"/\",\n+\t\t\t\theaders: [\n+\t\t\t\t\t{\n+\t\t\t\t\t\tkey: \"Access-Control-Allow-Origin\",\n+\t\t\t\t\t\tvalue: \"*\",\n+\t\t\t\t\t},\n+\t\t\t\t],\n+\t\t\t},\n+\t\t];\n+\t},\n }\n \n module.exports = nextConfig\n"
                 }
             ],
             "date": 1680716509246,
