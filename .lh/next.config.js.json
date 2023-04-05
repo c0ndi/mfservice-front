@@ -1,0 +1,26 @@
+{
+    "sourceFile": "next.config.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1680716509246,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1680716586990,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,12 @@\n /** @type {import('next').NextConfig} */\n+\n const nextConfig = {\n   reactStrictMode: true,\n   images: {\n     domains: [\"13.49.159.208\"]\n-  }\n-    async headers() {\n+  },\n+    headers() {\n     return [\n       {\n         // matching all API routes\n         source: \"/api/:path*\",\n"
+                },
+                {
+                    "date": 1680716598181,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n   reactStrictMode: true,\n   images: {\n     domains: [\"13.49.159.208\"]\n   },\n-    headers() {\n+  headers() {\n     return [\n       {\n         // matching all API routes\n         source: \"/api/:path*\",\n"
+                }
+            ],
+            "date": 1680716509246,
+            "name": "Commit-0",
+            "content": "/** @type {import('next').NextConfig} */\nconst nextConfig = {\n  reactStrictMode: true,\n  images: {\n    domains: [\"13.49.159.208\"]\n  }\n    async headers() {\n    return [\n      {\n        // matching all API routes\n        source: \"/api/:path*\",\n        headers: [\n          { key: \"Access-Control-Allow-Credentials\", value: \"true\" },\n          { key: \"Access-Control-Allow-Origin\", value: \"*\" },\n          { key: \"Access-Control-Allow-Methods\", value: \"GET,OPTIONS,PATCH,DELETE,POST,PUT\" },\n          { key: \"Access-Control-Allow-Headers\", value: \"X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version\" },\n        ]\n      }\n    ]\n  }\n}\n\nmodule.exports = nextConfig\n"
+        }
+    ]
+}
