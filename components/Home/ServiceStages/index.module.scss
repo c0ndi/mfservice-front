@@ -1,0 +1,13 @@
+@import '@/styles/shared.scss';
+
+.wrapper {
+}
+
+.stagesWrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.singleStageWrapper {
+  position: relative;
+}

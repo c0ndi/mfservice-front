@@ -1,12 +1,24 @@
 import Head from 'next/head'
-import {useEffect} from 'react'
-import axios from '@/config/axios'
 import {useQuery} from '@tanstack/react-query'
 import {getData} from "@/utils/getData";
-
+import Hero from "@/components/Home/Hero";
+import About from "@/components/Home/About";
+import ServiceStages from "@/components/Home/ServiceStages";
+import Faq from "@/components/Shared/FAQ";
 
 export default function Home() {
    const {data, isLoading, isError} = useQuery({queryKey: ['home'], queryFn: () => getData("/home")})
+
+   if (isLoading) {
+      return <div>Loading...</div>
+   }
+
+   const {
+      heroComponent,
+      serviceStageComponent,
+      aboutUsComponent,
+      faqComponent
+   } = data.data.attributes;
    return (
       <>
          <Head>
@@ -24,7 +36,10 @@ export default function Home() {
                href="/favicon.ico"
             />
          </Head>
-         <p>123</p>
+         <Hero content={heroComponent}/>
+         <ServiceStages content={serviceStageComponent}/>
+         <About content={aboutUsComponent}/>
+         <Faq content={faqComponent}/>
       </>
    )
 }

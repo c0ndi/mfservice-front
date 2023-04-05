@@ -1,0 +1,55 @@
+@import "@/styles/shared.scss";
+
+.leftWrapper {
+  width: 50%;
+  border: 1px solid #353535;
+  padding: 45px;
+  background: #000;
+  border-radius: 5px;
+}
+
+.phoneNumberBtn {
+  border-bottom: 1px solid #fff;
+  width: max-content;
+  font-weight: 700;
+  margin-top: 32px;
+  font-size: 17px;
+
+  span {
+    font-family: "Poppins", sans-serif;
+  }
+}
+
+.ceoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin: 32px 0;
+}
+
+.ceoImage {
+  height: 100px;
+  width: 100px;
+  border-radius: 999px;
+  object-fit: cover;
+}
+
+.ceoName {
+  font-size: 21px;
+  font-weight: 900;
+}
+
+.ceoCompany {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.heading {
+  font-size: 35px;
+  font-weight: 900;
+}
+
+.heading {
+  font-size: 35px;
+  font-weight: 900;
+}

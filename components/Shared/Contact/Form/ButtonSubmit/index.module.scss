@@ -1,0 +1,40 @@
+@import '@/styles/shared.scss';
+
+.buttonSending {
+  position: relative;
+
+  img {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    animation: rotate 1s linear infinite;
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.buttonSuccess {
+  background: #2EBD59;
+  position: relative;
+
+  img {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+  }
+}
+
+.buttonError {
+  background: #981E1E;
+  position: relative;
+
+  img {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+  }
+}
