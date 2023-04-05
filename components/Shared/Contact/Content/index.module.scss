@@ -27,9 +27,14 @@
   margin: 32px 0;
 }
 
-.ceoImage {
-  height: 100px;
+.imageWrapperCeo {
   width: 100px;
+  height: 100px;
+  border-radius: 999px;
+  position: relative;
+}
+
+.ceoImage {
   border-radius: 999px;
   object-fit: cover;
 }
@@ -49,7 +54,13 @@
   font-weight: 900;
 }
 
-.heading {
-  font-size: 35px;
-  font-weight: 900;
+@media (max-width: 1280px){
+  .leftWrapper {
+    width: 100%;
+    padding: 24px;
+  }
+
+  .phoneNumberBtn {
+    font-size: 15px;
+  }
 }

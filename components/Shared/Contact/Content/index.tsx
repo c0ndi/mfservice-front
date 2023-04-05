@@ -3,6 +3,7 @@ import Link from "next/link";
 import {PropsWithChildren} from "react";
 import {getSimpleImageUri} from "@/utils/getSimpleImageUri";
 import {StrapiImage} from "@/types/types";
+import Image from 'next/image'
 
 type Content = {
    formHeading: string;
@@ -15,18 +16,21 @@ type Content = {
    instagramLink: string;
 }
 
-export default function Content({ content }: PropsWithChildren<{ content: Content }>) {
+export default function Content({content}: PropsWithChildren<{ content: Content }>) {
    const {formHeading, name, mail, description, ceoCover, phoneNumber, facebookLink, instagramLink} = content;
    return (
       <div className={s.leftWrapper}>
          <p className={s.heading}>{formHeading}</p>
 
          <div className={s.ceoWrapper}>
-            <img
-               src={getSimpleImageUri(ceoCover)}
-               alt="Photo"
-               className={s.ceoImage}
-            />
+            <div className={s.imageWrapperCeo}>
+               <Image
+                  src={getSimpleImageUri(ceoCover)}
+                  alt="Photo"
+                  className={s.ceoImage}
+                  fill
+               />
+            </div>
 
             <div>
                <p className={s.ceoName}>{name}</p>
@@ -43,9 +47,11 @@ export default function Content({ content }: PropsWithChildren<{ content: Conten
                   passHref
                   href={facebookLink}
                >
-                  <img
+                  <Image
                      src="/icons/facebook.svg"
                      alt=""
+                     width={10}
+                     height={10}
                   />
                </Link>
 
@@ -53,9 +59,11 @@ export default function Content({ content }: PropsWithChildren<{ content: Conten
                   passHref
                   href={instagramLink}
                >
-                  <img
+                  <Image
                      src="/icons/instagram.svg"
                      alt=""
+                     width={10}
+                     height={10}
                   />
                </Link>
             </div>

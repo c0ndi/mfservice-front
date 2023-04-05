@@ -3,6 +3,7 @@ import {transformIndex} from "@/utils/transformIndex";
 import {PropsWithChildren, useState} from "react";
 import {motion, AnimatePresence} from "framer-motion"
 import HeadingMd from "@/components/Shared/HeadingMd";
+import Image from "next/image";
 
 type Question = {
    question: string,
@@ -31,10 +32,12 @@ function SingleQuestion({
             <p className={s.index}>{transformIndex(index + 1)}</p>
             <p className={s.heading}>{question}</p>
 
-            <img
-               src="/icons/triangle.png"
+            <Image
                alt="Photo"
+               src="/icons/triangle.png"
                style={{transform: `rotate(${isOpen ? "180deg" : "0"})`, transition: '0.3s'}}
+               width={10}
+               height={10}
             />
          </div>
 

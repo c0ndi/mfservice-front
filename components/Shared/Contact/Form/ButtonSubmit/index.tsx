@@ -1,4 +1,5 @@
 import s from "./index.module.scss";
+import Image from "next/image";
 
 export default function ButtonSubmitVariants({formStatus}: { formStatus: string }) {
    return (
@@ -16,8 +17,11 @@ export default function ButtonSubmitVariants({formStatus}: { formStatus: string 
                   type={"submit"}
                >
                   Wysyłanie wiadomości...
-                  <img
+                  <Image
                      src="/icons/form-btn-sending.png"
+                     alt={"Sending icon"}
+                     width={30}
+                     height={30}
                   />
                </button>
                : formStatus == "success" ?
@@ -26,9 +30,11 @@ export default function ButtonSubmitVariants({formStatus}: { formStatus: string 
                      type={"submit"}
                   >
                      Dziękujemy za kontakt!
-                     <img
+                     <Image
                         src="/icons/form-btn-success.png"
-                        alt=""
+                        alt="Success icon"
+                        width={30}
+                        height={30}
                      />
                   </button>
                   :
@@ -37,9 +43,11 @@ export default function ButtonSubmitVariants({formStatus}: { formStatus: string 
                      type={"submit"}
                   >
                      Coś poszło nie tak, spróbuj ponownie.
-                     <img
+                     <Image
                         src="/icons/form-btn-error.png"
-                        alt=""
+                        alt="Erorr icon"
+                        width={30}
+                        height={30}
                      />
                   </button>
          }

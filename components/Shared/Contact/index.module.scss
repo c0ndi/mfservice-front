@@ -7,7 +7,6 @@
   padding-bottom: 90px;
 }
 
-
 .inputsWrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -24,30 +23,10 @@
 
 
 @media (max-width: 1280px) {
-  .wrapper {
+  .contactPageWrapper {
     flex-direction: column;
     padding-top: 45px;
     padding-bottom: 45px;
   }
 
-  .rightWrapper {
-    width: 100%;
-  }
-
-  .leftWrapper {
-    width: 100%;
-    padding: 24px;
-  }
-
-  .heading {
-    font-size: 21px;
-  }
-
-  .desc {
-    font-size: 15px;
-  }
-
-  .phoneNumberBtn {
-    font-size: 15px;
-  }
 }
