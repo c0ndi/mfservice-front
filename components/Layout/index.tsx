@@ -30,9 +30,6 @@ export default function Layout({ children }: { children: ReactNode }) {
    return (
       <>
          {/*<Navbar links={data.links} />*/}
-         <Head>
-            <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
-         </Head>
          <p>Nav</p>
          <main className={"pageWrapper"}>
             {children}

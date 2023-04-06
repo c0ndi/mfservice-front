@@ -2,7 +2,7 @@ import s from './index.module.scss'
 import {transformIndex} from "@/utils/transformIndex";
 import {PropsWithChildren, useState} from "react";
 import {motion, AnimatePresence} from "framer-motion"
-import HeadingMd from "@/components/Shared/HeadingMd";
+import Heading from "@/components/Shared/Heading";
 import Image from "next/image";
 
 type Question = {
@@ -88,7 +88,7 @@ export default function Faq({content}: PropsWithChildren<{ content: Faq }>) {
    const {heading, questions} = content;
    return (
       <section className={s.wrapper}>
-         <HeadingMd heading={heading}/>
+         <Heading heading={heading} size={"md"}/>
 
          <div className={s.questionsWrapper}>
             {questions.map((question: Question, index, arr) => (

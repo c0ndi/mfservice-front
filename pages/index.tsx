@@ -13,6 +13,10 @@ export default function Home() {
       return <div>Loading...</div>
    }
 
+   if(isError) {
+      return <div>Error...</div>
+   }
+
    const {
       heroComponent,
       serviceStageComponent,
@@ -35,7 +39,6 @@ export default function Home() {
                rel="icon"
                href="/favicon.ico"
             />
-            <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
          </Head>
          <Hero content={heroComponent}/>
          <ServiceStages content={serviceStageComponent}/>

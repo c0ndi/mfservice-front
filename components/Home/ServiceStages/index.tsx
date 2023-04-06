@@ -3,7 +3,7 @@ import {StrapiImage} from "@/types/types";
 import {getSimpleImageUri} from "@/utils/getSimpleImageUri";
 import Image from "next/image";
 import s from './index.module.scss';
-import HeadingMd from "@/components/Shared/HeadingMd";
+import Heading from "@/components/Shared/Heading";
 
 type SingleStage = {
    title: string;
@@ -16,18 +16,21 @@ type ServiceStages = {
    singleStages: SingleStage [];
 }
 
-function SingleStage({content}: PropsWithChildren<{ content: SingleStage}>) {
+function SingleStage({content}: PropsWithChildren<{ content: SingleStage }>) {
    const {title, description, icon} = content;
    return (
       <div className={s.singleStageWrapper}>
-         <Image
-            src={getSimpleImageUri(icon)}
-            alt={title}
-            width={100}
-            height={75}
-         />
-         <p>{title}</p>
-         <p>{description}</p>
+         <div className={s.imageWrapper}>
+            <Image
+               src={getSimpleImageUri(icon)}
+               alt={title}
+               width={icon.data.attributes.width}
+               height={icon.data.attributes.height}
+            />
+         </div>
+
+         <p className={s.title}>{title}</p>
+         <p className={s.desc}>{description}</p>
       </div>
    )
 }
@@ -36,10 +39,16 @@ export default function ServiceStages({content}: PropsWithChildren<{ content: Se
    const {heading, singleStages} = content;
    return (
       <div className={s.wrapper}>
-         <HeadingMd heading={heading}/>
+         <Heading
+            heading={heading}
+            size={"md"}
+         />
 
          <div className={s.stagesWrapper}>
-            {singleStages.map((stage, index) => <SingleStage content={stage} key={index}/>)}
+            {singleStages.map((stage, index) => <SingleStage
+               content={stage}
+               key={index}
+            />)}
          </div>
       </div>
    )

@@ -4,14 +4,60 @@
   display: flex;
   align-items: center;
   gap: 100px;
+
+  padding-bottom: 90px;
 }
 
 .contentWrapper {
-  width: 50%;
+  width: 45%;
+
+  p:first-child {
+    padding-bottom: 0;
+  }
+}
+
+.desc {
+  padding: 24px 0;
+}
+
+.faq {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.faqText {
+  font-size: 17px;
+  font-weight: 500;
+  position: relative;
+
+  &::after {
+    content: "";
+    width: 75px;
+    height: 1px;
+    background-color: var(--primary);
+    bottom: -8px;
+    left: 0;
+    position: absolute;
+  }
 }
 
 .imageWrapper {
   position: relative;
   height: 500px;
-  width: 50%;
+  width: 55%;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 1080px) {
+  .wrapper {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .contentWrapper {
+    width: 100%;
+    order: 1;
+  }
 }

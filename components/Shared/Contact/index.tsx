@@ -3,7 +3,7 @@ import Content from "@/components/Shared/Contact/Content";
 import Form from "@/components/Shared/Contact/Form";
 import {StrapiImage} from "@/types/types";
 import {PropsWithChildren} from "react";
-import HeadingMd from "@/components/Shared/HeadingMd";
+import Heading from "@/components/Shared/Heading";
 
 export type FormComponent = {
    heading: string;
@@ -34,7 +34,7 @@ export default function Contact({content}: PropsWithChildren<{ content: Contact 
 
    return (
       <section className={s.wrapper}>
-         <HeadingMd heading={formComponent.formHeading}/>
+         <Heading heading={formComponent.formHeading} size={"md"}/>
 
          <div className={s.contactPageWrapper}>
             <Content content={contentData}/>

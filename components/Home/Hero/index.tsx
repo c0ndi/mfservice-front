@@ -6,6 +6,7 @@ import {getSimpleImageUri} from "@/utils/getSimpleImageUri";
 
 import Link from "next/link";
 import Image from "next/image";
+import Heading from "@/components/Shared/Heading";
 
 type Hero = {
    heading: string;
@@ -20,11 +21,11 @@ export default function Hero({content}: PropsWithChildren<{ content: Hero }>) {
    return (
       <div className={s.wrapper}>
          <div className={s.contentWrapper}>
-            <h1>{heading}</h1>
+            <Heading heading={heading} size={"lg"}/>
             <p className={s.desc}>{description}</p>
 
             <Link href={buttonLink}>
-               <button>
+               <button className={s.button}>
                   {buttonLabel}
                </button>
             </Link>

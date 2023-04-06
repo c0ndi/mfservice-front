@@ -1,12 +1,13 @@
 import {PropsWithChildren} from "react";
 import {StrapiImageArray} from "@/types/types";
-import {getSimpleImageUriArray} from "@/utils/getSimpleImageUriArray";
 
-import Image from "next/image";
 import Link from "next/link";
 
 import s from './index.module.scss'
-import HeadingMd from "@/components/Shared/HeadingMd";
+import Heading from "@/components/Shared/Heading";
+import Grid from "@/components/Home/About/Grid";
+import FaqIcon from "@/public/icons/faq-icon.svg";
+import Image from "next/image";
 
 type About = {
    heading: string;
@@ -18,29 +19,36 @@ type About = {
 
 export default function About({content}: PropsWithChildren<{ content: About }>) {
    const {heading, description, buttonLabel, faqLabel, covers} = content;
+
    return (
       <div className={s.wrapper}>
          <div className={s.contentWrapper}>
-            <HeadingMd heading={heading}/>
-            <p>{description}</p>
+            <Heading
+               heading={heading}
+               size={"md"}
+            />
+            <p className={s.desc}>{description}</p>
 
-            <Link href={"/o-nas"}>
-               <button>{buttonLabel}</button>
+            <Link href={"/motocykle"}>
+               <button className={s.button}>{buttonLabel}</button>
             </Link>
 
-            <Link href={"/#faq"}>{faqLabel}</Link>
+            <Link href={"/#faq"}>
+               <div className={s.faq}>
+                  <p className={s.faqText}>
+                     {faqLabel}
+                  </p>
+                  <Image
+                     src={FaqIcon}
+                     alt={"Faq"}
+                     width={24}
+                     height={24}
+                  />
+               </div>
+            </Link>
          </div>
 
-         <div className={s.imageWrapper}>
-            {covers.data.map((image, index) => (
-               <Image
-                  src={getSimpleImageUriArray(image)}
-                  fill
-                  alt={`${heading}-photo-${index}`}
-                  key={index}
-               />)
-            )}
-         </div>
+         <Grid covers={covers}/>
       </div>
    )
 }

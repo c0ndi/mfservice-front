@@ -3,9 +3,9 @@ import '@/styles/reset.scss'
 import type {AppProps} from 'next/app'
 import {
    QueryClient,
-   QueryClientProvider, useQuery,
+   QueryClientProvider,
+   useQuery,
 } from '@tanstack/react-query'
-import Contact from "@/components/Shared/Contact";
 import Layout from "@/components/Layout";
 
 const queryClient = new QueryClient()

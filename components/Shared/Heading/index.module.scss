@@ -1,0 +1,35 @@
+.heading {
+  font-weight: 800;
+  color: #fff;
+
+  span {
+    color: var(--primary);
+  }
+}
+
+.lg {
+  font-size: 64px;
+}
+
+.md {
+  font-size: 32px;
+  padding-bottom: 40px;
+}
+
+@media (max-width: 1280px) {
+  .lg {
+    font-size: 30px;
+  }
+
+  .md {
+    font-size: 24px;
+    padding-bottom: 24px;
+  }
+}
+
+@media (max-width: 639px) {
+  .md {
+    font-size: 20px;
+    padding-bottom: 18px;
+  }
+}

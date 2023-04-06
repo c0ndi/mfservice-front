@@ -2,6 +2,8 @@ export type StrapiImage = {
    data: {
       attributes: {
          url: string;
+         width?: number;
+         height?: number;
       }
    }
 }
