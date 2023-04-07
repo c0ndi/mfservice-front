@@ -1,10 +1,13 @@
 @import '@/styles/shared.scss';
 
+.wrapper {
+  padding: 90px 0;
+}
+
 .contactPageWrapper {
   display: flex;
   align-items: center;
   gap: 40px;
-  padding-bottom: 90px;
 }
 
 .inputsWrapper {

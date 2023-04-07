@@ -1,7 +1,7 @@
 @import '@/styles/shared.scss';
 
 .wrapper {
-  padding-bottom: 90px;
+  padding: 90px 0;
 }
 
 .stagesWrapper {
@@ -11,7 +11,7 @@
 }
 
 .singleStageWrapper {
-  height: max-content; // 2 warianty - max-content i 100%
+  height: 100%;
   position: relative;
   padding: 24px;
 
@@ -28,9 +28,22 @@
   }
 }
 
+.index {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-size: 27px;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+
+  span {
+    color: var(--primary);
+  }
+}
+
 .imageWrapper {
   max-height: 100px;
-  margin: 16px 0;
+  margin: 32px 0;
 
   display: flex;
   justify-content: center;
@@ -49,6 +62,10 @@
   text-align: justify;
 }
 
+.slider {
+  display: none;
+}
+
 @media (max-width: 1080px) {
     .stagesWrapper {
         grid-template-columns: repeat(2, 1fr);
@@ -57,6 +74,10 @@
 
 @media (max-width: 639px) {
     .stagesWrapper {
-        grid-template-columns: 1fr;
+      display: none;
     }
+
+  .slider {
+    display:block;
+  }
 }

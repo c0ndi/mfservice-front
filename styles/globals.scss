@@ -3,6 +3,11 @@
 
 :root {
   --primary: #F6831F;
+  --primary-hover: #b45600;
+}
+
+* {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -53,6 +58,28 @@ html {
     border-bottom: 1px solid #fff;
   }
 }
+
+.swiper-pagination {
+  margin-top: 12px;
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
+
+.swiper-pagination-bullet {
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 999px;
+  height: 10px !important;
+  width: 10px !important;
+  background: #343434 !important;
+  opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--primary) !important;
+}
+
 
 @media (max-width: 1280px) {
   .swiper {

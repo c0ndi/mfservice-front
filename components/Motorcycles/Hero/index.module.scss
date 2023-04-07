@@ -1,0 +1,44 @@
+@import '@/styles/shared.scss';
+
+.wrapper {
+  padding: 150px 0 90px;
+
+  h1 {
+    font-size: 72px;
+    font-weight: 800;
+
+    span {
+      color: var(--primary);
+    }
+  }
+}
+
+.button {
+  margin-top: 12px;
+}
+
+.desc {
+  width: 70%;
+}
+
+@media (max-width: 1080px) {
+  .wrapper {
+    padding-top: 90px;
+
+    h1 {
+      font-size: 40px;
+    }
+  }
+
+  .desc {
+    width: 100%;
+  }
+}
+
+@media (max-width: 639px) {
+  .wrapper {
+    h1 {
+      font-size: 30px;
+    }
+  }
+}

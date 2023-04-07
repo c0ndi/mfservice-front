@@ -5,6 +5,11 @@ import Image from "next/image";
 import s from './index.module.scss';
 import Heading from "@/components/Shared/Heading";
 
+import {Swiper, SwiperSlide} from 'swiper/react';
+import 'swiper/css';
+import {Pagination} from "swiper";
+
+
 type SingleStage = {
    title: string;
    description: string;
@@ -16,10 +21,16 @@ type ServiceStages = {
    singleStages: SingleStage [];
 }
 
-function SingleStage({content}: PropsWithChildren<{ content: SingleStage }>) {
+function SingleStage({content, index}: PropsWithChildren<{ content: SingleStage, index: number }>) {
    const {title, description, icon} = content;
    return (
       <div className={s.singleStageWrapper}>
+         <p className={s.index}>
+            0
+            <span>
+               {index + 1}
+            </span>
+         </p>
          <div className={s.imageWrapper}>
             <Image
                src={getSimpleImageUri(icon)}
@@ -45,10 +56,31 @@ export default function ServiceStages({content}: PropsWithChildren<{ content: Se
          />
 
          <div className={s.stagesWrapper}>
-            {singleStages.map((stage, index) => <SingleStage
-               content={stage}
-               key={index}
-            />)}
+            {singleStages.map((stage, index) =>
+               <SingleStage
+                  index={index}
+                  content={stage}
+                  key={index}
+               />
+            )}
+         </div>
+
+         <div className={s.slider}>
+            <Swiper
+               spaceBetween={50}
+               slidesPerView={1}
+               modules={[Pagination]}
+               pagination={{clickable: true}}
+            >
+               {singleStages.map((stage, index) => (
+                  <SwiperSlide key={index}>
+                     <SingleStage
+                        content={stage}
+                        index={index}
+                     />
+                  </SwiperSlide>
+               ))}
+            </Swiper>
          </div>
       </div>
    )

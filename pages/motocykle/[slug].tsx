@@ -44,16 +44,6 @@ export default function Home() {
             />
          </Head>
 
-         <Heading heading={name} />
-         <p style={{padding: "6em 0"}}>{description}</p>
-         <ul style={{margin: "6em 0", marginBottom: "50vh"}}>
-            {motorcycleParameters.map((parameter: {name: string, parameter: string}, key: Key) => (
-               <li key={key} style={{display: "flex", gap: "1em"}}>
-                  <p>{parameter.name}</p>
-                  <p>{parameter.parameter}</p>
-               </li>
-               ))}
-         </ul>
       </>
    )
 }

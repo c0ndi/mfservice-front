@@ -5,12 +5,15 @@ import {useRouter} from "next/router";
 import Heading from "@/components/Shared/Heading";
 import {Key} from "react";
 import Link from "next/link";
+import Hero from "@/components/Motorcycles/Hero";
+import Motorcycles from "@/components/Motorcycles/Motorcycles";
+import History from "@/components/Motorcycles/History";
 
 export default function Home() {
    const router = useRouter()
    const {slug} = router.query
 
-   const {data, isLoading, isError} = useQuery({queryKey: [slug], queryFn: () => getData(`/motorcycles`)})
+   const {data, isLoading, isError} = useQuery({queryKey: [slug], queryFn: () => getData(`/about`)})
 
    if (isLoading) {
       return <div>Loading...</div>
@@ -20,8 +23,12 @@ export default function Home() {
       return <div>Error...</div>
    }
 
-   const motorcycles = data.data;
-   console.log(motorcycles)
+   const {
+      heroComponent,
+      motorycleComponent,
+      historyComponent,
+      seo
+   } = data.data.attributes;
 
    return (
       <>
@@ -41,18 +48,9 @@ export default function Home() {
             />
          </Head>
 
-         <Heading heading={"Nasze motocykle - DEMO"}/>
-         <ul style={{margin: "6em 0", marginBottom: "50vh"}}>
-            {motorcycles.map((motorcycle: { attributes: { id: string, slug: string, name: string } }) => {
-               return (
-                  <li key={motorcycle.attributes.id} style={{margin: "2em 0"}}>
-                     <Link href={"/motocykle/" + motorcycle.attributes.slug}>
-                        <p>{motorcycle.attributes.name}</p>
-                     </Link>
-                  </li>
-               )
-            })}
-         </ul>
+         <Hero content={heroComponent}/>
+         <Motorcycles content={motorycleComponent} />
+         <History content={historyComponent}/>
       </>
    )
 }
