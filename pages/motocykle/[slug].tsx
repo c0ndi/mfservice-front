@@ -4,6 +4,7 @@ import {getData} from "@/utils/getData";
 import {useRouter} from "next/router";
 import Heading from "@/components/Shared/Heading";
 import {Key} from "react";
+import Data from "@/components/Motorcycle/Data";
 
 export default function Home() {
    const router = useRouter()
@@ -19,12 +20,7 @@ export default function Home() {
       return <div>Error...</div>
    }
 
-   const {
-      name,
-      description,
-      motorcycleParameters,
-      covers,
-   } = data.data[0].attributes;
+   const content = data.data[0].attributes;
 
    return (
       <>
@@ -43,7 +39,7 @@ export default function Home() {
                href="/favicon.ico"
             />
          </Head>
-
+         <Data content={content} />
       </>
    )
 }
