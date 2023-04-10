@@ -2,14 +2,22 @@ import s from "./index.module.scss";
 import ButtonSubmitVariants from "@/components/Shared/Contact/Form/ButtonSubmit";
 import {useForm} from "react-hook-form";
 import {useState} from "react";
+import axios from "axios";
 
 export default function Form({formClause}: { formClause: string }) {
    const {register, handleSubmit, formState: {errors}, reset} = useForm<{name: string, email: string, message: string, clauseCB: boolean}>();
 
    const [formStatus, setFormStatus] = useState<"normal" | "sending" | "success" | "error">('normal');
 
-   const onSubmit = (data: {name: string, email: string, message: string, clauseCB: boolean}) => {
+   const onSubmit = async (data: {name: string, email: string, message: string, clauseCB: boolean}) => {
       setFormStatus('sending');
+
+      await axios.post(`${process.env.NEXT_PUBLIC_STRAPI}/api/messages`, {data: data}).then(() => {
+         setFormStatus('success')
+      }).catch(err => {
+         console.log(err)
+         setFormStatus('error')
+      });
    }
    return (
       <form

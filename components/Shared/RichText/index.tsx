@@ -16,6 +16,7 @@ export default function RichText({desc}: RichText) {
       <div className={s.wrapper}>
          <ReactMarkdown
             components={{
+               blockquote: ({node, ...props}) => <blockquote {...props}/>,
                del: ({node, ...props}) => <span className={s.customDel}>{props.children[0]}</span>,
                a: ({node, ...props}) => <Link href={String(props.href)} target={"_blank"} {...props}/>,
                h1: ({node, ...props}) => <h1 className={s.customH1} {...props}/>,
