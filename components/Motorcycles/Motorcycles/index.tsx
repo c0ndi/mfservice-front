@@ -27,9 +27,9 @@ type Motorcycles = {
 
 export default function Motorcycles({content}: PropsWithChildren<{ content: Motorcycles }>) {
    const {heading, showMoreLabel, motorcycles} = content;
-   console.log(motorcycles)
    return (
-      <section className={s.wrapper}>
+      // @ts-ignore
+      <section className={s.wrapper} name={"motocykle"}>
          <Heading
             heading={heading}
             size={"md"}

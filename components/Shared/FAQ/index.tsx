@@ -87,7 +87,8 @@ function SingleQuestion({
 export default function Faq({content}: PropsWithChildren<{ content: Faq }>) {
    const {heading, questions} = content;
    return (
-      <section className={s.wrapper}>
+      // @ts-ignore
+      <section className={s.wrapper} name={"faq"}>
          <Heading heading={heading} size={"md"}/>
 
          <div className={s.questionsWrapper}>

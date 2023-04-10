@@ -19,9 +19,9 @@ type About = {
 
 export default function About({content}: PropsWithChildren<{ content: About }>) {
    const {heading, description, buttonLabel, faqLabel, covers} = content;
-
    return (
-      <div className={s.wrapper}>
+      // @ts-ignore
+      <section className={s.wrapper} name={"motocykle"}>
          <div className={s.contentWrapper}>
             <Heading
                heading={heading}
@@ -49,6 +49,6 @@ export default function About({content}: PropsWithChildren<{ content: About }>) 
          </div>
 
          <Grid covers={covers}/>
-      </div>
+      </section>
    )
 }
