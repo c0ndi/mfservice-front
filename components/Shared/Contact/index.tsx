@@ -33,8 +33,7 @@ export default function Contact({content}: PropsWithChildren<{ content: Contact 
    }
 
    return (
-      // @ts-ignore
-      <section className={s.wrapper} name={"kontakt"}>
+      <section className={s.wrapper}>
          <Heading heading={formComponent.formHeading} size={"md"}/>
 
          <div className={s.contactPageWrapper}>

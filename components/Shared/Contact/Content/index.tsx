@@ -41,37 +41,35 @@ export default function Content({content}: PropsWithChildren<{ content: Content 
                   {mail}
                </a>
             </div>
+
+            <div className={s.iconsWrapper}>
+               <Link
+                  passHref
+                  href={facebookLink}
+               >
+                  <Image
+                     src="/icons/facebook.svg"
+                     alt=""
+                     width={10}
+                     height={10}
+                  />
+               </Link>
+
+               <Link
+                  passHref
+                  href={instagramLink}
+               >
+                  <Image
+                     src="/icons/instagram.svg"
+                     alt=""
+                     width={10}
+                     height={10}
+                  />
+               </Link>
+            </div>
          </div>
 
          <p className={s.desc}>{description}</p>
-
-         <div className={s.iconsWrapper}>
-            <Link
-               passHref
-               href={facebookLink}
-               target={"_blank"}
-            >
-               <Image
-                  src="/icons/facebook.svg"
-                  alt=""
-                  width={24}
-                  height={24}
-               />
-            </Link>
-
-            <Link
-               passHref
-               href={instagramLink}
-               target={"_blank"}
-            >
-               <Image
-                  src="/icons/instagram.svg"
-                  alt=""
-                  width={24}
-                  height={24}
-               />
-            </Link>
-         </div>
 
          <Link href={`tel:${phoneNumber}`}>
             <p className={s.phoneNumberBtn}>Zadzwoń <span>{phoneNumber}</span></p>

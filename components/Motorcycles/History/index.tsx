@@ -15,8 +15,7 @@ type History = {
 export default function History({content}: PropsWithChildren<{content: History}>) {
    const {heading, description, covers} = content
    return (
-      // @ts-ignore
-      <section className={s.wrapper} name={"historia"}>
+      <section className={s.wrapper}>
          <div className={s.contentWrapper}>
             <div className={s.headingWrapperDesktop}>
                <Heading heading={heading} size={"lg"}/>

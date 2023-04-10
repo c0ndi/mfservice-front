@@ -49,8 +49,7 @@ function SingleStage({content, index}: PropsWithChildren<{ content: SingleStage,
 export default function ServiceStages({content}: PropsWithChildren<{ content: ServiceStages }>) {
    const {heading, singleStages} = content;
    return (
-      // @ts-ignore
-      <section className={s.wrapper} name={"obsługa"}>
+      <div className={s.wrapper}>
          <Heading
             heading={heading}
             size={"md"}
@@ -83,6 +82,6 @@ export default function ServiceStages({content}: PropsWithChildren<{ content: Se
                ))}
             </Swiper>
          </div>
-      </section>
+      </div>
    )
 }

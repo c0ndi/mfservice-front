@@ -54,12 +54,6 @@
   font-weight: 900;
 }
 
-.iconsWrapper {
-  display: flex;
-  gap: 24px;
-  align-items: center;
-}
-
 @media (max-width: 1080px){
   .leftWrapper {
     padding: 24px;
@@ -87,9 +81,5 @@
   .phoneNumberBtn {
     font-size: 13px;
     margin-top: 16px;
-  }
-
-  .iconsWrapper {
-    display: none;
   }
 }
