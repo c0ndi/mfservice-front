@@ -18,7 +18,6 @@
   padding: 24px 23px 24px 0;
   width: 100%;
   z-index: 9999;
-  background: #000;
 
   .logo {
     margin-right: auto;
@@ -71,6 +70,7 @@
 .mobileMenu {
   width: 100%;
   height: 100vh;
+  display: none;
   position: fixed;
   top: -100%;
   z-index: 9998;
@@ -96,6 +96,10 @@
 }
 
 @media (max-width: 769px) {
+  .mobileMenu {
+    display: block;
+  }
+
   .wrapper {
     .links {
       display: none;

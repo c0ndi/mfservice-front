@@ -8,16 +8,21 @@ export default function Form({formClause}: { formClause: string }) {
    const {register, handleSubmit, formState: {errors}, reset} = useForm<{name: string, email: string, message: string, clauseCB: boolean}>();
 
    const [formStatus, setFormStatus] = useState<"normal" | "sending" | "success" | "error">('normal');
+   const [disabled, setDisabled] = useState(false);
 
    const onSubmit = async (data: {name: string, email: string, message: string, clauseCB: boolean}) => {
       setFormStatus('sending');
 
       await axios.post(`${process.env.NEXT_PUBLIC_STRAPI}/api/messages`, {data: data}).then(() => {
          setFormStatus('success')
+
+         setDisabled(true)
       }).catch(err => {
          console.log(err)
          setFormStatus('error')
       });
+
+      reset()
    }
    return (
       <form
@@ -61,7 +66,7 @@ export default function Form({formClause}: { formClause: string }) {
             </label>
          </div>
 
-         <ButtonSubmitVariants formStatus={formStatus}/>
+         <ButtonSubmitVariants formStatus={formStatus} disabled={disabled}/>
       </form>
    )
 }

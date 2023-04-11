@@ -4,6 +4,7 @@ import Hero from "@/components/Home/Hero";
 import About from "@/components/Home/About";
 import ServiceStages from "@/components/Home/ServiceStages";
 import Seo from "@/components/Shared/Seo";
+import Image from "next/image";
 
 export default function Home() {
    const {data, isLoading, isError} = useQuery({queryKey: ['home'], queryFn: () => getData("/home")})
@@ -12,7 +13,7 @@ export default function Home() {
       return <div>Loading...</div>
    }
 
-   if(isError) {
+   if (isError) {
       return <div>Error...</div>
    }
 
@@ -26,6 +27,27 @@ export default function Home() {
       <>
          <Seo seo={seo}/>
          <Hero content={heroComponent}/>
+         <Image
+            src="/gradients/gradient-hero-home.png"
+            alt="GradientHero"
+            fill
+            draggable={false}
+            style={{position: "absolute", top: 0, zIndex: -1, left: 0, userSelect: "none"}}
+         />
+         <Image
+            src="/gradients/gradient-about-home.png"
+            alt="GradientAbout"
+            fill
+            draggable={false}
+            style={{position: "absolute", top: 0, left: 0, zIndex: -1, userSelect: "none", transform: "translateY(1000px)"}}
+         />
+         <Image
+            src="/gradients/gradient-faq-home.png"
+            alt="GradientAbout"
+            fill
+            style={{position: "absolute", top: "100%", left: 0, zIndex: -1, userSelect: "none", transform: "translateY(1000px)" }}
+            draggable={false}
+         />
          <ServiceStages content={serviceStageComponent}/>
          <About content={aboutUsComponent}/>
       </>

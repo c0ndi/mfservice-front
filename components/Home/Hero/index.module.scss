@@ -1,11 +1,17 @@
 @import '@/styles/shared.scss';
 
 .wrapper {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 100px;
   padding-bottom: 90px;
   padding-top: 120px;
+  z-index: 995;
+}
+
+.gradient {
+  right: 0;
 }
 
 .contentWrapper {

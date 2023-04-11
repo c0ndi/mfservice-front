@@ -5,6 +5,7 @@ import Contact from "@/components/Shared/Contact";
 import Faq from "@/components/Shared/FAQ";
 import Footer from "@/components/Shared/Footer";
 import Navbar from "@/components/Shared/Navbar";
+import Image from "next/image";
 
 export default function Layout({ children }: { children: ReactNode }) {
    const {data, isLoading, isError} = useQuery({queryKey: ['shared'], queryFn: () => getData("/shared")})
@@ -32,6 +33,14 @@ export default function Layout({ children }: { children: ReactNode }) {
       facebookLink,
    }
 
+   const footerContent = {
+      nipNumber,
+      phoneNumber,
+      address,
+      facebookLink,
+      instagramLink,
+   }
+
    return (
       <>
          <Navbar content={navContent} />
@@ -40,7 +49,8 @@ export default function Layout({ children }: { children: ReactNode }) {
             <Faq content={faqComponent} />
             <Contact content={contactContent} />
          </main>
-         <Footer />
+
+         <Footer content={footerContent}/>
       </>
    )
 }

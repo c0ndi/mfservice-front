@@ -6,6 +6,7 @@ import {
    QueryClientProvider,
 } from '@tanstack/react-query'
 import Layout from "@/components/Layout";
+import Image from "next/image";
 
 const queryClient = new QueryClient()
 export default function App({Component, pageProps}: AppProps) {

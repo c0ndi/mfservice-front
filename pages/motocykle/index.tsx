@@ -9,6 +9,7 @@ import Hero from "@/components/Motorcycles/Hero";
 import Motorcycles from "@/components/Motorcycles/Motorcycles";
 import History from "@/components/Motorcycles/History";
 import Seo from "@/components/Shared/Seo";
+import Image from "next/image";
 
 export default function Home() {
    const router = useRouter()
@@ -34,8 +35,29 @@ export default function Home() {
    return (
       <>
          <Seo seo={seo}/>
+         <Image
+            src="/gradients/gradient-hero-motorcycle.png"
+            alt="GradientHero"
+            fill
+            draggable={false}
+            style={{position: "absolute", top: 0, zIndex: -1, left: 0,transform: "translateY(000px)", userSelect: "none"}}
+         />
+         <Image
+            src="/gradients/gradient-motorcycles-motorcycle.png"
+            alt="GradientHero"
+            fill
+            draggable={false}
+            style={{position: "absolute", top: 0, zIndex: -1, left: 0,transform: "translateY(900px)", userSelect: "none"}}
+         />
+         <Image
+            src="/gradients/gradient-faq-home.png"
+            alt="GradientAbout"
+            fill
+            style={{position: "absolute", top: "100%", left: 0, zIndex: -1, userSelect: "none", transform: "translateY(1000px) rotate(180deg)" }}
+            draggable={false}
+         />
          <Hero content={heroComponent}/>
-         <Motorcycles content={motorcyclesComponent} />
+         <Motorcycles content={motorcyclesComponent}/>
          <History content={historyComponent}/>
       </>
    )

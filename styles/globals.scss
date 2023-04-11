@@ -18,9 +18,17 @@ html {
 }
 
 body {
-  background-color: #000;
   color: #fff;
   transition: 0.3s;
+}
+
+img {
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 html {

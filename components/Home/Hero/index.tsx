@@ -22,6 +22,7 @@ export default function Hero({content}: PropsWithChildren<{ content: Hero }>) {
    return (
       // @ts-ignore
       <section className={s.wrapper}>
+
          <div className={s.contentWrapper}>
             <Heading
                heading={heading}
