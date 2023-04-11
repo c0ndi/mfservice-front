@@ -5,16 +5,20 @@ import About from "@/components/Home/About";
 import ServiceStages from "@/components/Home/ServiceStages";
 import Seo from "@/components/Shared/Seo";
 import Image from "next/image";
+import WelcomeLoading from "@/components/Shared/WelcomeLoading";
+import ErrorComponent from "@/components/Shared/ErrorComponent";
+import {useLoading} from "@/hooks/useLoading";
+import Loading from "@/components/Shared/Loading";
 
 export default function Home() {
    const {data, isLoading, isError} = useQuery({queryKey: ['home'], queryFn: () => getData("/home")})
 
    if (isLoading) {
-      return <div>Loading...</div>
+      return <Loading/>
    }
 
    if (isError) {
-      return <div>Error...</div>
+      return <ErrorComponent />
    }
 
    const {
@@ -32,7 +36,7 @@ export default function Home() {
             alt="GradientHero"
             fill
             draggable={false}
-            style={{position: "absolute", top: 0, zIndex: -1, left: 0, userSelect: "none"}}
+            style={{position: "absolute", top: "100px", zIndex: -2, left: 0, userSelect: "none"}}
          />
          <Image
             src="/gradients/gradient-about-home.png"

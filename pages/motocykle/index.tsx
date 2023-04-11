@@ -10,6 +10,8 @@ import Motorcycles from "@/components/Motorcycles/Motorcycles";
 import History from "@/components/Motorcycles/History";
 import Seo from "@/components/Shared/Seo";
 import Image from "next/image";
+import ErrorComponent from "@/components/Shared/ErrorComponent";
+import Loading from "@/components/Shared/Loading";
 
 export default function Home() {
    const router = useRouter()
@@ -18,11 +20,11 @@ export default function Home() {
    const {data, isLoading, isError} = useQuery({queryKey: [slug], queryFn: () => getData(`/about`)})
 
    if (isLoading) {
-      return <div>Loading...</div>
+      return <Loading/>
    }
 
    if (isError) {
-      return <div>Error...</div>
+      return <ErrorComponent />
    }
 
    const {

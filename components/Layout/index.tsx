@@ -6,16 +6,22 @@ import Faq from "@/components/Shared/FAQ";
 import Footer from "@/components/Shared/Footer";
 import Navbar from "@/components/Shared/Navbar";
 import Image from "next/image";
+import {useRouter} from "next/router";
+import ErrorComponent from "@/components/Shared/ErrorComponent";
+import WelcomeLoading from "@/components/Shared/WelcomeLoading";
+import {useLoading} from "@/hooks/useLoading";
 
 export default function Layout({ children }: { children: ReactNode }) {
    const {data, isLoading, isError} = useQuery({queryKey: ['shared'], queryFn: () => getData("/shared")})
 
-   if(isLoading) {
-      return <p>loading</p>
+   const loading = useLoading(isLoading);
+
+   if(loading) {
+      return <WelcomeLoading/>
    }
 
    if(isError) {
-      return <p>error</p>
+      return <ErrorComponent/>
    }
 
    const {phoneNumber, nipNumber, address, facebookLink, instagramLink, formComponent, nav, faqComponent} = data.data.attributes;

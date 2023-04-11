@@ -1,0 +1,35 @@
+.wrapper {
+  height: 95vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    font-size: 64px;
+    font-weight: 800;
+    color: #fff;
+
+    span {
+      font-weight: 300;
+    }
+  }
+  
+  div:nth-child(2) {
+    height: 4px;
+    border-radius: 5px;
+    background: var(--primary);
+    width: 100%;
+    animation-name: loading;
+    animation-duration: 0.7s;
+  }
+}
+
+@keyframes loading {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
