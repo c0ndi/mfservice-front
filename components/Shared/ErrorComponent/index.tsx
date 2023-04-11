@@ -6,7 +6,7 @@ export default function ErrorComponent({redirect}: { redirect?: boolean}) {
    const router = useRouter();
    useEffect(()=> {
       router.push("/error")
-   }, [redirect])
+   }, [redirect, router])
    return (
       <main className="errorPage">
          <p className={"logo"}>
