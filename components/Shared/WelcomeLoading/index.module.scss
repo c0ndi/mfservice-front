@@ -33,3 +33,19 @@
     width: 100%;
   }
 }
+
+@media (max-width: 1080px) {
+  .wrapper {
+    p {
+      font-size: 48px;
+    }
+  }
+}
+
+@media (max-width: 539px) {
+  .wrapper {
+    p {
+      font-size: 32px;
+    }
+  }
+}
