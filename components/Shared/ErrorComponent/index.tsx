@@ -1,12 +1,22 @@
 import Link from "next/link";
+import {useEffect} from "react";
+import {useRouter} from "next/router";
 
-export default function ErrorComponent() {
+export default function ErrorComponent({redirect}: { redirect?: boolean}) {
+   const router = useRouter();
+   useEffect(()=> {
+      router.push("/error")
+   }, [redirect])
    return (
       <main className="errorPage">
-         <h1>Coś poszło nie tak <span>:/</span></h1>
+         <p className={"logo"}>
+            MF
+            <span>SERVICE</span>
+         </p>
+         <h1>Coś poszło nie tak wróć na stronę główną.</h1>
 
          <Link href={"/"}>
-            <p>Strona główna</p>
+            <span>Strona główna</span>
          </Link>
       </main>
    )

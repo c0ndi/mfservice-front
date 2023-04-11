@@ -5,6 +5,8 @@ import {StrapiImageArray} from "@/types/types";
 import {PropsWithChildren, useState} from "react";
 import {getSimpleImageUriArray} from "@/utils/getSimpleImageUriArray";
 import CoversSection from "@/components/Motorcycle/CoversSection";
+import {useRouter} from "next/router";
+import ArrowBack from '@/public/icons/arrow-back.svg';
 
 type InfoSection = {
    name: string,
@@ -18,6 +20,8 @@ export default function InfoSection({content}: PropsWithChildren<{ content: Info
 
    const [index, setIndex] = useState(0);
    const [currentCover, setCurrentCover] = useState<string>(getSimpleImageUriArray(covers.data[0]));
+
+   const router = useRouter();
 
    let splitName = name.split(' ');
    let coloredWords = ["Harley-Davidson"];
@@ -53,6 +57,16 @@ export default function InfoSection({content}: PropsWithChildren<{ content: Info
 
    return (
       <div className={s.wrapper}>
+         <button
+            className={s.backButton}
+            onClick={() => router.back()}
+         >
+            <Image
+               src={ArrowBack}
+               alt={"Arrow-back"}
+            />
+            Go back
+         </button>
          <div className={s.topWrapper}>
             <div className={s.imageWrapper}>
                <Image

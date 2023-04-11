@@ -3,12 +3,26 @@
 .wrapper {
   display: flex;
   flex-direction: column;
+  padding-top: 120px;
 }
 
 .topWrapper {
   display: flex;
   gap: 50px;
-  margin-top: 120px;
+}
+
+.backButton {
+  padding-bottom: 32px;
+  font-weight: 700;
+  font-size: 18px;
+  width: max-content;
+  display: flex;
+  align-items: center;
+
+
+  img {
+    margin-right: 10px;
+  }
 }
 
 .imageWrapper {
@@ -76,8 +90,10 @@
 }
 
 @media (max-width: 1080px) {
+  .wrapper {
+    padding-top: 120px;
+  }
   .topWrapper {
-    margin-top: 90px;
     flex-direction: column;
     gap: 0;
   }
@@ -116,6 +132,20 @@
 }
 
 @media (max-width: 529px) {
+  .wrapper {
+    padding-top: 80px;
+  }
+
+  .backButton {
+    padding-bottom: 16px;
+    font-size: 13px;
+
+    img {
+      width: 15px;
+      height: 15px;
+    }
+  }
+
   .imageWrapper {
     height: 250px;
 

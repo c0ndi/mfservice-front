@@ -7,14 +7,23 @@ import {
 } from '@tanstack/react-query'
 import Layout from "@/components/Layout";
 import Image from "next/image";
+import {useRouter} from "next/router";
 
 const queryClient = new QueryClient()
 export default function App({Component, pageProps}: AppProps) {
+   const router = useRouter();
+   const layoutPaths = ["/", "/motocykle", "/motocykle/[slug]"];
+   const isLayout = layoutPaths.includes(router.pathname);
    return (
       <QueryClientProvider client={queryClient}>
-         <Layout>
+         {isLayout ? (
+            <Layout>
+               <Component {...pageProps} />
+            </Layout>
+         ) : (
             <Component {...pageProps} />
-         </Layout>
+         )}
+
       </QueryClientProvider>
    )
 }

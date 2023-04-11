@@ -49,7 +49,7 @@ html {
 }
 
 .errorPage {
-  height: 100vh;
+  height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,7 +57,7 @@ html {
   gap: 40px;
 
   h1 {
-    font-size: 35px;
+    font-size: 24px;
     font-weight: 900;
 
     span {
@@ -65,10 +65,24 @@ html {
     }
   }
 
-  p {
-    font-size: 17px;
-    font-weight: 600;
-    border-bottom: 1px solid #fff;
+  a {
+    span {
+      font-size: 20px;
+      padding-bottom: 2px;
+      font-weight: 600;
+      border-bottom: 1px solid #fff;
+    }
+  }
+
+  .logo {
+    z-index: 9999;
+    font-size: 64px;
+    font-weight: 700;
+    margin-bottom: 40px;
+
+    span {
+      color: var(--primary);
+    }
   }
 }
 
@@ -101,19 +115,19 @@ html {
 }
 
 .markdown {
-  h1, h2, h3, h4, h5, h6{
+  h1, h2, h3, h4, h5, h6 {
     font-size: 27px;
     font-weight: 900;
     margin-bottom: 10px;
   }
 
-  li{
+  li {
     list-style-type: disc;
     margin: 0 10px;
     font-weight: bold;
   }
 
-  p{
+  p {
     margin-bottom: 40px;
     font-weight: 400;
   }

@@ -21,12 +21,11 @@ export default function Home() {
       return <Loading/>
    }
 
-   if(isError) {
-      return <ErrorComponent/>
+   if(isError || !data.data.length) {
+      return <ErrorComponent redirect/>
    }
 
    const content = data.data[0].attributes;
-
    return (
       <>
          <Seo seo={content.seo}/>

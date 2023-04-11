@@ -16,7 +16,6 @@ export default function Data({content}: PropsWithChildren<{ content: Data }>) {
       name, description, motorcycleParameters, covers
    }
 
-
    return (
       <InfoSection content={infoSectionContent}/>
    )
