@@ -7,6 +7,7 @@ import FBIcon from '@/public/icons/facebook.svg';
 import IGIcon from '@/public/icons/instagram.svg';
 import {PropsWithChildren, useEffect, useState} from "react";
 import {Turn as Hamburger} from 'hamburger-react'
+import NavGradient from '@/public/gradients/gradient-nav-menu.png'
 
 type Navbar = {
    links: {
@@ -45,41 +46,42 @@ export default function Navbar({content}: PropsWithChildren<{ content: Navbar }>
                      )
                   })}
                </ul>
+               <p className={s.socialsLabel}>Nasze sociale:</p>
+               <div className={s.socialsMenu}>
+                  <Link
+                     href={facebookLink}
+                     target={"_blank"}
+                     onClick={() => setOpen(false)}
+                  >
+                     <Image
+                        src={FBIcon}
+                        alt={"Facebook"}
+                        width={22}
+                        height={22}
+                     />
+                  </Link>
+
+                  <Link
+                     href={instagramLink}
+                     target={"_blank"}
+                     onClick={() => setOpen(false)}
+                  >
+                     <Image
+                        src={IGIcon}
+                        alt={"Facebook"}
+                        width={22}
+                        height={22}
+                     />
+                  </Link>
+               </div>
 
                <div className={s.bottomCover}>
                   <Image
-                     src={"/gradients/gradient-nav-menu.png"}
+                     src={NavGradient}
                      alt={"gradient"}
-                     fill
                      style={{zIndex: 995}}
                   />
-                  <div className={s.socialsMenu}>
-                     <Link
-                        href={facebookLink}
-                        target={"_blank"}
-                        onClick={() => setOpen(false)}
-                     >
-                        <Image
-                           src={FBIcon}
-                           alt={"Facebook"}
-                           width={24}
-                           height={24}
-                        />
-                     </Link>
 
-                     <Link
-                        href={instagramLink}
-                        target={"_blank"}
-                        onClick={() => setOpen(false)}
-                     >
-                        <Image
-                           src={IGIcon}
-                           alt={"Facebook"}
-                           width={24}
-                           height={24}
-                        />
-                     </Link>
-                  </div>
                </div>
             </div>
             {/*mobilemenu*/}

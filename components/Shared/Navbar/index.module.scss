@@ -55,12 +55,21 @@
   }
 }
 
+.socialsLabel {
+  font-weight: 500;
+  margin-top: 32px;
+  margin-left: 16px;
+  margin-bottom: 16px;
+  font-size: 15px;
+}
+
 .socialsMenu {
   display: flex;
   gap: 32px;
-  position: absolute;
   bottom: 32px;
+  margin-left: 16px;
   right: 32px;
+  z-index: 9999;
 }
 
 .socialsMobile {
