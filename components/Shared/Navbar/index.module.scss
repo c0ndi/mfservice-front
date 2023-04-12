@@ -55,6 +55,14 @@
   }
 }
 
+.socialsMenu {
+  display: flex;
+  gap: 32px;
+  position: absolute;
+  bottom: 32px;
+  right: 32px;
+}
+
 .socialsMobile {
   display: none;
   gap: 24px;
@@ -71,13 +79,12 @@
 .mobileMenu {
   width: 100%;
   height: 100vh;
-  display: none;
   position: fixed;
-  top: -100%;
+  left: -100%;
   z-index: 9998;
-  left: 0;
+  top: 0;
   background-color: #000;
-  transition: top 0.3s;
+  transition: left 0.3s;
 
   * {
     z-index: 9999;
@@ -86,21 +93,23 @@
   ul {
     display: flex;
     flex-direction: column;
-    gap: 16px;
     padding: 15px;
-    margin-top: 20%;
+    margin-top: 15%;
+
+    li {
+      font-size: 18px;
+      border-bottom: 1px solid #222;
+      padding: 12px 0;
+      font-weight: 500;
+    }
   }
 }
 
 .open {
-  top: 80px;
+  left: 0;
 }
 
 @media (max-width: 769px) {
-  .mobileMenu {
-    display: block;
-  }
-
   .wrapper {
     .links {
       display: none;
@@ -131,13 +140,13 @@
 }
 
 @media (max-width: 639px) {
+  .outerWrapper {
+    position: fixed;
+    background: #000;
+  }
   .wrapper {
     padding: 3px 0;
     padding-right: 24px;
-  }
-
-  .open {
-    top: 42px;
   }
 
   .hamburger {

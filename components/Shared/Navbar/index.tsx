@@ -36,6 +36,7 @@ export default function Navbar({content}: PropsWithChildren<{ content: Navbar }>
                            href={link.linkUrl}
                            key={index}
                            onClick={() => setOpen(false)}
+                           style={{borderTop: index == 0 ? "1px solid #222" : "none"}}
                         >
                            <li>
                               {link.linkLabel}
@@ -44,6 +45,42 @@ export default function Navbar({content}: PropsWithChildren<{ content: Navbar }>
                      )
                   })}
                </ul>
+
+               <div className={s.bottomCover}>
+                  <Image
+                     src={"/gradients/gradient-nav-menu.png"}
+                     alt={"gradient"}
+                     fill
+                     style={{zIndex: 995}}
+                  />
+                  <div className={s.socialsMenu}>
+                     <Link
+                        href={facebookLink}
+                        target={"_blank"}
+                        onClick={() => setOpen(false)}
+                     >
+                        <Image
+                           src={FBIcon}
+                           alt={"Facebook"}
+                           width={24}
+                           height={24}
+                        />
+                     </Link>
+
+                     <Link
+                        href={instagramLink}
+                        target={"_blank"}
+                        onClick={() => setOpen(false)}
+                     >
+                        <Image
+                           src={IGIcon}
+                           alt={"Facebook"}
+                           width={24}
+                           height={24}
+                        />
+                     </Link>
+                  </div>
+               </div>
             </div>
             {/*mobilemenu*/}
 
