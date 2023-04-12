@@ -155,7 +155,7 @@
   }
   .wrapper {
     padding: 3px 0;
-    padding-right: 24px;
+    //padding-right: 24px;
   }
 
   .hamburger {
@@ -179,5 +179,9 @@
   }
   .socialsMobile {
     display: none;
+  }
+
+  .hamburger {
+    transform: translateX(8px);
   }
 }
