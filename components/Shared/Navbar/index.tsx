@@ -5,21 +5,22 @@ import Image from 'next/image';
 
 import FBIcon from '@/public/icons/facebook.svg';
 import IGIcon from '@/public/icons/instagram.svg';
-import {PropsWithChildren, useEffect, useState} from "react";
-import {Turn as Hamburger} from 'hamburger-react'
+import { PropsWithChildren, useEffect, useState } from "react";
+import { Turn as Hamburger } from 'hamburger-react'
 import NavGradient from '@/public/gradients/gradient-nav-menu.png'
+import Logo from "../Logo";
 
 type Navbar = {
    links: {
       linkLabel: string;
       linkUrl: string;
-   } [],
+   }[],
    facebookLink: string;
    instagramLink: string;
 }
 
-export default function Navbar({content}: PropsWithChildren<{ content: Navbar }>) {
-   const {links, facebookLink, instagramLink} = content;
+export default function Navbar({ content }: PropsWithChildren<{ content: Navbar }>) {
+   const { links, facebookLink, instagramLink } = content;
 
    const [isOpen, setOpen] = useState(false)
    return (
@@ -37,7 +38,7 @@ export default function Navbar({content}: PropsWithChildren<{ content: Navbar }>
                            href={link.linkUrl}
                            key={index}
                            onClick={() => setOpen(false)}
-                           style={{borderTop: index == 0 ? "1px solid #222" : "none"}}
+                           style={{ borderTop: index == 0 ? "1px solid #222" : "none" }}
                         >
                            <li>
                               {link.linkLabel}
@@ -79,22 +80,14 @@ export default function Navbar({content}: PropsWithChildren<{ content: Navbar }>
                   <Image
                      src={NavGradient}
                      alt={"gradient"}
-                     style={{zIndex: 995}}
+                     style={{ zIndex: 995 }}
                   />
 
                </div>
             </div>
             {/*mobilemenu*/}
 
-            <Link
-               href={"/"}
-               className={s.logo}
-            >
-               <p>
-                  MF
-                  <span>SERVICE</span>
-               </p>
-            </Link>
+            <Logo />
 
             <div className={s.socialsMobile}>
                <Link

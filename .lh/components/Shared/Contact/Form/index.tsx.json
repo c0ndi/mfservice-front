@@ -1,0 +1,18 @@
+{
+    "sourceFile": "components/Shared/Contact/Form/index.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1695030007651,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1695030007651,
+            "name": "Commit-0",
+            "content": "import s from \"./index.module.scss\";\nimport ButtonSubmitVariants from \"@/components/Shared/Contact/Form/ButtonSubmit\";\nimport {useForm} from \"react-hook-form\";\nimport {useState} from \"react\";\nimport axios from \"axios\";\n\nexport default function Form({formClause}: { formClause: string }) {\n   const {register, handleSubmit, formState: {errors}, reset} = useForm<{name: string, email: string, message: string, clauseCB: boolean}>();\n\n   const [formStatus, setFormStatus] = useState<\"normal\" | \"sending\" | \"success\" | \"error\">('normal');\n   const [disabled, setDisabled] = useState(false);\n\n   const onSubmit = async (data: {name: string, email: string, message: string, clauseCB: boolean}) => {\n      setFormStatus('sending');\n\n      await axios.post(`${process.env.NEXT_PUBLIC_STRAPI}/api/messages`, {data: data}).then(() => {\n         setFormStatus('success')\n\n         setDisabled(true)\n      }).catch(err => {\n         console.log(err)\n         setFormStatus('error')\n      });\n\n      reset()\n   }\n   return (\n      <form\n         className={s.form}\n         onSubmit={handleSubmit(onSubmit)}\n      >\n         <label className={errors.name && s.invalidLabel}>TWOJE IMIE</label>\n         <input\n            placeholder={\"*Wpisz swoję imię\"}\n            {...register(\"name\", {required: true})}\n            className={errors.name && s.invalidInput}\n         />\n\n         <label className={errors.email && s.invalidLabel}>ADRES EMAIL</label>\n         <input\n            placeholder={\"*Twój adres email\"}\n            {...register(\"email\", {required: true, pattern: /^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$/})}\n            className={errors.email && s.invalidInput}\n         />\n\n         <label className={errors.message && s.invalidLabel}>WIADOMOŚĆ</label>\n         <textarea\n            placeholder={\"*Twoja wiadomość\"}\n            maxLength={500}\n            {...register(\"message\", {required: true, max: 500})}\n            className={errors.message && s.invalidInput}\n         />\n\n         <div className={s.checkboxWrapper}>\n            <input\n               type=\"checkbox\"\n               id={\"clauseCB\"}\n               {...register('clauseCB', {required: true})} />\n            <label\n               htmlFor=\"clauseCB\"\n               className={errors.clauseCB && s.invalidClause}\n            >\n               <p>\n                  {formClause}\n               </p>\n            </label>\n         </div>\n\n         <ButtonSubmitVariants formStatus={formStatus} disabled={disabled}/>\n      </form>\n   )\n}"
+        }
+    ]
+}

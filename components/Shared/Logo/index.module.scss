@@ -1,0 +1,29 @@
+.logo {
+    margin-right: auto;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+  
+    .logoHeading {
+      font-size: 32px;
+      font-family: "Raleway";
+      font-weight: 400;
+  
+      span {
+        color: var(--primary);
+        font-weight: 700;
+      }
+    }
+  
+    .logoSubheading {
+      transform: translateY(-12px);
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 200;
+  
+      span {
+        color: var(--primary);
+        font-weight: 700;
+      }
+    }
+  }

@@ -1,0 +1,22 @@
+{
+    "sourceFile": "styles/shared.scss",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1695028836511,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1695028866525,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n     font-weight: 400;\n \n     span {\n       color: var(--primary);\n-      font-weight: 800;\n+      font-weight: 700;\n     }\n   }\n \n   .logoSubheading {\n"
+                }
+            ],
+            "date": 1695028836511,
+            "name": "Commit-0",
+            "content": ".desc {\n  color: rgba(255, 255, 255, 0.8);\n  font-weight: 300;\n  font-size: 16px;\n  padding: 16px 0;\n}\n\n.button {\n  width: max-content;\n  padding: 12px 32px;\n  background: var(--primary);\n  border-radius: 5px;\n  font-weight: 600;\n  font-size: 17px;\n  transition: background 0.3s;\n\n  &:hover {\n    background: var(--primary-hover);\n  }\n}\n\n.logo {\n  margin-right: auto;\n  z-index: 9999;\n  display: flex;\n  flex-direction: column;\n\n  .logoHeading {\n    font-size: 32px;\n    font-family: \"Raleway\";\n    font-weight: 400;\n\n    span {\n      color: var(--primary);\n      font-weight: 800;\n    }\n  }\n\n  .logoSubheading {\n    transform: translateY(-12px);\n    display: inline-block;\n    font-size: 13px;\n    font-weight: 200;\n\n    span {\n      color: var(--primary);\n      font-weight: 800;\n    }\n  }\n}\n\n@media (max-width: 1280px) {\n  .desc {\n    font-size: 15px;\n    padding: 8px 0;\n  }\n\n  .button {\n    font-size: 13px;\n  }\n}"
+        }
+    ]
+}

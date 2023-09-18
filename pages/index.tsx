@@ -5,9 +5,7 @@ import About from "@/components/Home/About";
 import ServiceStages from "@/components/Home/ServiceStages";
 import Seo from "@/components/Shared/Seo";
 import Image from "next/image";
-import WelcomeLoading from "@/components/Shared/WelcomeLoading";
 import ErrorComponent from "@/components/Shared/ErrorComponent";
-import {useLoading} from "@/hooks/useLoading";
 import Loading from "@/components/Shared/Loading";
 
 export default function Home() {

@@ -1,0 +1,26 @@
+{
+    "sourceFile": "components/Shared/Logo/index.module.scss",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1695029415477,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1695036380073,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n .logo {\n     margin-right: auto;\n     z-index: 9999;\n+    margin-left: 10px;\n     display: flex;\n     flex-direction: column;\n   \n     .logoHeading {\n"
+                },
+                {
+                    "date": 1695036392993,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .logo {\n     margin-right: auto;\n     z-index: 9999;\n-    margin-left: 10px;\n+    padding-left: 10px;\n     display: flex;\n     flex-direction: column;\n   \n     .logoHeading {\n"
+                }
+            ],
+            "date": 1695029415477,
+            "name": "Commit-0",
+            "content": ".logo {\n    margin-right: auto;\n    z-index: 9999;\n    display: flex;\n    flex-direction: column;\n  \n    .logoHeading {\n      font-size: 32px;\n      font-family: \"Raleway\";\n      font-weight: 400;\n  \n      span {\n        color: var(--primary);\n        font-weight: 700;\n      }\n    }\n  \n    .logoSubheading {\n      transform: translateY(-12px);\n      display: inline-block;\n      font-size: 13px;\n      font-weight: 200;\n  \n      span {\n        color: var(--primary);\n        font-weight: 700;\n      }\n    }\n  }"
+        }
+    ]
+}

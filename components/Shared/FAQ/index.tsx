@@ -4,6 +4,8 @@ import {PropsWithChildren, useState} from "react";
 import {motion, AnimatePresence} from "framer-motion"
 import Heading from "@/components/Shared/Heading";
 import Image from "next/image";
+// @ts-ignore
+import {arabToRoman} from "roman-numbers"
 
 type Question = {
    question: string,
@@ -29,7 +31,7 @@ function SingleQuestion({
          onClick={() => setIsOpen((prev) => !prev)}
       >
          <div className={s.headingWrapper}>
-            <p className={s.index}>{transformIndex(index + 1)}</p>
+            <p className={s.index}>{arabToRoman(index + 1)}</p>
             <p className={s.heading}>{question}</p>
 
             <Image

@@ -4,6 +4,7 @@ import {PropsWithChildren} from "react";
 import Image from "next/image";
 import FBIcon from "@/public/icons/facebook.svg";
 import IGIcon from "@/public/icons/instagram.svg";
+import Logo from "../Logo";
 
 type Footer = {
    facebookLink: string;
@@ -19,16 +20,7 @@ export default function Footer({content}: PropsWithChildren<{ content: Footer }>
       <footer className={s.wrapper}>
          <div className={s.footerWrapper}>
             <div className={s.line}/>
-
-            <Link
-               href={"/"}
-               className={s.logo}
-            >
-               <p>
-                  MF
-                  <span>SERVICE</span>
-               </p>
-            </Link>
+            <Logo/>
 
             <div className={s.contact}>
                <p>NIP: <span>{nipNumber}</span></p>

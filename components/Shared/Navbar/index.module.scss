@@ -1,3 +1,5 @@
+@import "../../../styles/shared.scss";
+
 .outerWrapper {
   position: absolute;
   width: 100vw;
@@ -19,21 +21,6 @@
   padding: 24px 23px 24px 0;
   width: 100%;
   z-index: 9999;
-
-  .logo {
-    margin-right: auto;
-    z-index: 9999;
-
-    p {
-      font-size: 32px;
-      font-weight: 800;
-    }
-
-    span {
-      font-size: 24px;
-      font-weight: 400;
-    }
-  }
 
   .links {
     display: flex;
@@ -153,6 +140,7 @@
     position: fixed;
     background: #000;
   }
+
   .wrapper {
     padding: 3px 0;
     //padding-right: 24px;
@@ -177,6 +165,7 @@
       }
     }
   }
+
   .socialsMobile {
     display: none;
   }

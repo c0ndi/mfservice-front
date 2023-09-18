@@ -35,8 +35,8 @@ function SingleStage({content, index}: PropsWithChildren<{ content: SingleStage,
             <Image
                src={getSimpleImageUri(icon)}
                alt={title}
-               width={icon.data.attributes.width}
-               height={icon.data.attributes.height}
+               width={100}
+               height={100}
             />
          </div>
 
