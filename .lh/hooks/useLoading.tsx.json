@@ -1,0 +1,22 @@
+{
+    "sourceFile": "hooks/useLoading.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1698966639188,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1698966644847,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,15 @@\n import { useEffect, useState } from \"react\";\n \n-export const useLoading = (isLoading: boolean, time: number) => {\n+export const useLoading = (isLoading: boolean, time?: number) => {\n    const [loading, setLoading] = useState<boolean>(true);\n \n    useEffect(() => {\n       const timeout = setTimeout(() => {\n          if (!isLoading) {\n             setLoading(false);\n          }\n-      }, 1000);\n+      }, time ?? 1000);\n \n       () => clearTimeout(timeout);\n    }, [isLoading])\n \n"
+                }
+            ],
+            "date": 1698966639188,
+            "name": "Commit-0",
+            "content": "import { useEffect, useState } from \"react\";\n\nexport const useLoading = (isLoading: boolean, time: number) => {\n   const [loading, setLoading] = useState<boolean>(true);\n\n   useEffect(() => {\n      const timeout = setTimeout(() => {\n         if (!isLoading) {\n            setLoading(false);\n         }\n      }, 1000);\n\n      () => clearTimeout(timeout);\n   }, [isLoading])\n\n   return loading;\n}"
+        }
+    ]
+}

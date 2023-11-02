@@ -1,12 +1,8 @@
 import Link from "next/link";
-import {useEffect} from "react";
-import {useRouter} from "next/router";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
-export default function ErrorComponent({redirect}: { redirect?: boolean}) {
-   const router = useRouter();
-   useEffect(()=> {
-      router.push("/error")
-   }, [redirect, router])
+export default function ErrorComponent({ redirect }: { redirect?: boolean }) {
    return (
       <main className="errorPage">
          <p className={"logo"}>

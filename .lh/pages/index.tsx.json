@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 22,
+            "activePatchIndex": 23,
             "patches": [
                 {
                     "date": 1680603368553,
@@ -96,6 +96,10 @@
                 {
                     "date": 1695040687225,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,11 +4,9 @@\n import About from \"@/components/Home/About\";\n import ServiceStages from \"@/components/Home/ServiceStages\";\n import Seo from \"@/components/Shared/Seo\";\n import Image from \"next/image\";\n-import WelcomeLoading from \"@/components/Shared/WelcomeLoading\";\n import ErrorComponent from \"@/components/Shared/ErrorComponent\";\n-import {useLoading} from \"@/hooks/useLoading\";\n import Loading from \"@/components/Shared/Loading\";\n \n export default function Home() {\n    const {data, isLoading, isError} = useQuery({queryKey: ['home'], queryFn: () => getData(\"/home\")})\n"
+                },
+                {
+                    "date": 1698966719384,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,13 +6,16 @@\n import Seo from \"@/components/Shared/Seo\";\n import Image from \"next/image\";\n import ErrorComponent from \"@/components/Shared/ErrorComponent\";\n import Loading from \"@/components/Shared/Loading\";\n+import { useLoading } from '@/hooks/useLoading';\n \n export default function Home() {\n    const {data, isLoading, isError} = useQuery({queryKey: ['home'], queryFn: () => getData(\"/home\")})\n \n-   if (isLoading) {\n+   const loading = useLoading(isLoading, 500)\n+\n+   if (loading) {\n       return <Loading/>\n    }\n \n    if (isError) {\n"
                 }
             ],
             "date": 1680603368553,

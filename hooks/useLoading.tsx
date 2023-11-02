@@ -1,14 +1,14 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
-export const useLoading = (isLoading: boolean) => {
+export const useLoading = (isLoading: boolean, time?: number) => {
    const [loading, setLoading] = useState<boolean>(true);
 
    useEffect(() => {
       const timeout = setTimeout(() => {
-         if(!isLoading) {
+         if (!isLoading) {
             setLoading(false);
          }
-      }, 1000);
+      }, time ?? 1000);
 
       () => clearTimeout(timeout);
    }, [isLoading])

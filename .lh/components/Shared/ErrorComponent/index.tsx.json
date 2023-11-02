@@ -1,0 +1,22 @@
+{
+    "sourceFile": "components/Shared/ErrorComponent/index.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1698966378059,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1698966387196,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,19 @@\n+import Link from \"next/link\";\n+import { useEffect } from \"react\";\n+import { useRouter } from \"next/router\";\n+\n+export default function ErrorComponent({ redirect }: { redirect?: boolean }) {\n+   return (\n+      <main className=\"errorPage\">\n+         <p className={\"logo\"}>\n+            MF\n+            <span>SERVICE</span>\n+         </p>\n+         <h1>Coś poszło nie tak wróć na stronę główną.</h1>\n+\n+         <Link href={\"/\"}>\n+            <span>Strona główna</span>\n+         </Link>\n+      </main>\n+   )\n+}\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1698966378059,
+            "name": "Commit-0",
+            "content": "import Link from \"next/link\";\nimport {useEffect} from \"react\";\nimport {useRouter} from \"next/router\";\n\nexport default function ErrorComponent({redirect}: { redirect?: boolean}) {\n   return (\n      <main className=\"errorPage\">\n         <p className={\"logo\"}>\n            MF\n            <span>SERVICE</span>\n         </p>\n         <h1>Coś poszło nie tak wróć na stronę główną.</h1>\n\n         <Link href={\"/\"}>\n            <span>Strona główna</span>\n         </Link>\n      </main>\n   )\n}"
+        }
+    ]
+}
