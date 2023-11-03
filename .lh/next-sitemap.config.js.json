@@ -1,0 +1,18 @@
+{
+    "sourceFile": "next-sitemap.config.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1699012560869,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1699012560869,
+            "name": "Commit-0",
+            "content": "/** @type {import('next-sitemap').IConfig} */\nmodule.exports = {\n  siteUrl: process.env.SITE_URL || 'https://harley-davidson-legends.pl',\n  generateRobotsTxt: true, // (optional)\n  // ...other options\n}\n"
+        }
+    ]
+}
