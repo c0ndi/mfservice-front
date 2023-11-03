@@ -32,3 +32,15 @@
     }
   }
 }
+
+@media (max-width: 639px) {
+  .logo {
+    .logoHeading {
+      font-size: 20px;
+    }
+
+    .logoSubheading {
+      font-size: 10px;
+    }
+  }
+}
