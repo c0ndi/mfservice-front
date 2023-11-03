@@ -1,0 +1,18 @@
+{
+    "sourceFile": "components/Motorcycles/Motorcycles/index.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1699009387374,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1699009387374,
+            "name": "Commit-0",
+            "content": "import {PropsWithChildren} from \"react\";\nimport Heading from \"@/components/Shared/Heading\";\nimport s from './index.module.scss'\nimport MotorcycleContainer from \"@/components/Motorcycles/Motorcycles/MotorcycleContainer\";\nimport {StrapiImageArray} from \"@/types/types\";\n\nimport {Swiper, SwiperSlide} from \"swiper/react\";\nimport {Pagination} from \"swiper\";\nimport 'swiper/css';\n\n\n\nexport type Motorcycle = {\n   attributes: {\n      slug: string,\n      name: string,\n      motorcycleParameters: { name: string, parameter: string } [],\n      covers: { data: StrapiImageArray [] };\n   }\n}\n\ntype Motorcycles = {\n   heading: string,\n   showMoreLabel: string,\n   motorcycles: { data: Motorcycle [] },\n}\n\nexport default function Motorcycles({content}: PropsWithChildren<{ content: Motorcycles }>) {\n   const {heading, showMoreLabel, motorcycles} = content;\n   return (\n      // @ts-ignore\n      <section className={s.wrapper} name={\"motocykle\"}>\n         <Heading\n            heading={heading}\n            size={\"md\"}\n         />\n\n         <div className={s.motorcycleWrapper}>\n            {motorcycles.data.map((motorcycle, index) => {\n               return (\n                  <MotorcycleContainer content={motorcycle} key={index}/>\n               )\n            })}\n         </div>\n\n         <div className={s.slider}>\n            <Swiper\n               spaceBetween={50}\n               slidesPerView={1}\n               modules={[Pagination]}\n               pagination={{clickable: true}}\n               style={{\n                  overflowY: \"hidden\"\n               }}\n            >\n               {motorcycles.data.map((motorcycle, index) => (\n                  <SwiperSlide key={index}>\n                     <MotorcycleContainer content={motorcycle}/>\n                  </SwiperSlide>\n               ))}\n            </Swiper>\n         </div>\n      </section>\n   )\n}"
+        }
+    ]
+}

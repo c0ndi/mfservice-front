@@ -44,3 +44,17 @@
     }
   }
 }
+
+@media (max-width: 281px) {
+  .wrapper {
+    .logo {
+      .logoHeading {
+        font-size: 18px;
+      }
+
+      .logoSubheading {
+        font-size: 8px;
+      }
+    }
+  }
+}
