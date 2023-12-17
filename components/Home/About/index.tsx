@@ -1,5 +1,5 @@
-import {PropsWithChildren} from "react";
-import {StrapiImageArray} from "@/types/types";
+import { PropsWithChildren } from "react";
+import { StrapiImageArray } from "@/types/types";
 
 import Link from "next/link";
 
@@ -14,11 +14,11 @@ type About = {
    description: string;
    buttonLabel: string;
    faqLabel: string;
-   covers: { data: StrapiImageArray [] };
+   covers: { data: StrapiImageArray[] };
 }
 
-export default function About({content}: PropsWithChildren<{ content: About }>) {
-   const {heading, description, buttonLabel, faqLabel, covers} = content;
+export default function About({ content }: PropsWithChildren<{ content: About }>) {
+   const { heading, description, buttonLabel, faqLabel, covers } = content;
    return (
       // @ts-ignore
       <section className={s.wrapper} name={"motocykle"}>
@@ -48,7 +48,7 @@ export default function About({content}: PropsWithChildren<{ content: About }>) 
             </Link>
          </div>
 
-         <Grid covers={covers}/>
+         <Grid covers={covers} />
       </section>
    )
 }

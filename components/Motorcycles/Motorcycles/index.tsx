@@ -4,12 +4,6 @@ import s from './index.module.scss'
 import MotorcycleContainer from "@/components/Motorcycles/Motorcycles/MotorcycleContainer";
 import { StrapiImageArray } from "@/types/types";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
-import 'swiper/css';
-
-
-
 export type Motorcycle = {
    attributes: {
       slug: string,
@@ -43,7 +37,7 @@ export default function Motorcycles({ content }: PropsWithChildren<{ content: Mo
             })}
          </div>
 
-         <div className={s.slider}>
+         {/* <div className={s.slider}>
             <Swiper
                spaceBetween={50}
                slidesPerView={1}
@@ -59,7 +53,7 @@ export default function Motorcycles({ content }: PropsWithChildren<{ content: Mo
                   </SwiperSlide>
                ))}
             </Swiper>
-         </div>
+         </div> */}
       </section>
    )
 }

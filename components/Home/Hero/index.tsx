@@ -1,8 +1,8 @@
 import s from './index.module.scss';
 
-import {StrapiImage} from "@/types/types";
-import {PropsWithChildren} from "react";
-import {getSimpleImageUri} from "@/utils/getSimpleImageUri";
+import { StrapiImage } from "@/types/types";
+import { PropsWithChildren } from "react";
+import { getSimpleImageUri } from "@/utils/getSimpleImageUri";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -17,8 +17,8 @@ type Hero = {
    cover: StrapiImage;
 }
 
-export default function Hero({content}: PropsWithChildren<{ content: Hero }>) {
-   const {heading, description, buttonLink, buttonLabel, cover} = content;
+export default function Hero({ content }: PropsWithChildren<{ content: Hero }>) {
+   const { heading, description, buttonLink, buttonLabel, cover } = content;
    return (
       // @ts-ignore
       <section className={s.wrapper}>
@@ -38,17 +38,20 @@ export default function Hero({content}: PropsWithChildren<{ content: Hero }>) {
          </div>
 
          <div className={s.imageWrapper}>
-            {/*<Image*/}
-            {/*   src={getSimpleImageUri(cover)}*/}
-            {/*   alt={"Motorcycle image"}*/}
-            {/*   fill*/}
-            {/*/>*/}
-            <CustomImage
+            <Image
+               src={getSimpleImageUri(cover)}
+               alt={"Motorcycle image"}
+               fill
+               priority
+               placeholder="blur"
+               blurDataURL="/loading-screen.png"
+               sizes='(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw'
+            />
+            {/* <CustomImage
                alt={"MotorcycleImage"}
                src={getSimpleImageUri(cover)}
                fill
-               priority
-            />
+            /> */}
          </div>
       </section>
    )

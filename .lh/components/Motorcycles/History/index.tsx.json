@@ -1,0 +1,18 @@
+{
+    "sourceFile": "components/Motorcycles/History/index.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1702853287359,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1702853287359,
+            "name": "Commit-0",
+            "content": "import s from './index.module.scss';\nimport { PropsWithChildren } from \"react\";\nimport { StrapiImageArray } from \"@/types/types\";\nimport Heading from \"@/components/Shared/Heading\";\nimport Image from \"next/image\";\nimport { getSimpleImageUriArray } from \"@/utils/getSimpleImageUriArray\";\nimport RichText from \"@/components/Shared/RichText\";\n\ntype History = {\n   heading: string,\n   description: string,\n   covers: { data: StrapiImageArray[] },\n}\n\nexport default function History({ content }: PropsWithChildren<{ content: History }>) {\n   const { heading, description, covers } = content\n   return (\n      // @ts-ignore\n      <section className={s.wrapper} name={\"historia\"}>\n         <div className={s.contentWrapper}>\n            <div className={s.headingWrapperDesktop}>\n               <Heading heading={heading} size={\"lg\"} />\n            </div>\n            <RichText desc={description} />\n         </div>\n\n         <div className={s.headingWrapper}>\n            <Heading heading={heading} size={\"lg\"} />\n         </div>\n         <div className={s.imageWrapper}>\n            <div className={s.firstContainer}>\n               <Image src={getSimpleImageUriArray(covers.data[0])} alt={\"First-photo\"} fill sizes='(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw' />\n            </div>\n            <div className={s.secondContainer}>\n               <Image src={getSimpleImageUriArray(covers.data[1])} alt={\"Second-photo\"} fill sizes='(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw' />\n            </div>\n            <div className={s.thirdContainer}>\n               <Image src={getSimpleImageUriArray(covers.data[2])} alt={\"Third-photo\"} fill sizes='(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw' />\n            </div>\n            <div className={s.fourthContainer}>\n               <Image src={getSimpleImageUriArray(covers.data[3])} alt={\"Fourth-photo\"} fill sizes='(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw' />\n            </div>\n         </div>\n      </section>\n   )\n}"
+        }
+    ]
+}

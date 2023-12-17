@@ -1,14 +1,13 @@
-import {PropsWithChildren} from "react";
-import {StrapiImageArray} from "@/types/types";
+import { PropsWithChildren } from "react";
+import { StrapiImageArray } from "@/types/types";
 import Image from "next/image";
-import {getSimpleImageUriArray} from "@/utils/getSimpleImageUriArray";
+import { getSimpleImageUriArray } from "@/utils/getSimpleImageUriArray";
 import s from './index.module.scss'
-import {getSimpleImageUri} from "@/utils/getSimpleImageUri";
-import {Motorcycle} from "@/components/Motorcycles/Motorcycles";
+import { Motorcycle } from "@/components/Motorcycles/Motorcycles";
 import Link from "next/link";
 
-export default function MotorcycleContainer({content}: PropsWithChildren<{ content: Motorcycle }>) {
-   const {name, motorcycleParameters, covers, slug} = content.attributes;
+export default function MotorcycleContainer({ content }: PropsWithChildren<{ content: Motorcycle }>) {
+   const { name, motorcycleParameters, covers, slug } = content.attributes;
    return (
       <Link href={`/motocykle/${slug}`}>
          <div className={s.wrapper}>
@@ -23,6 +22,11 @@ export default function MotorcycleContainer({content}: PropsWithChildren<{ conte
                   src={getSimpleImageUriArray(covers.data[0])}
                   alt={name}
                   fill
+                  quality={50}
+                  placeholder="blur"
+                  loading="lazy"
+                  blurDataURL="/loading-screen.png"
+                  sizes='(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw'
                />
             </div>
 

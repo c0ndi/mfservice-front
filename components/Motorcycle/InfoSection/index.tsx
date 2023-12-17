@@ -1,22 +1,22 @@
 import Image from "next/image";
 import s from './index.module.scss'
 import ArrowIcon from '@/public/icons/arrow.svg'
-import {StrapiImageArray} from "@/types/types";
-import {PropsWithChildren, useState} from "react";
-import {getSimpleImageUriArray} from "@/utils/getSimpleImageUriArray";
+import { StrapiImageArray } from "@/types/types";
+import { PropsWithChildren, useState } from "react";
+import { getSimpleImageUriArray } from "@/utils/getSimpleImageUriArray";
 import CoversSection from "@/components/Motorcycle/CoversSection";
-import {useRouter} from "next/router";
+import { useRouter } from "next/router";
 import ArrowBack from '@/public/icons/arrow-back.svg';
 
 type InfoSection = {
    name: string,
    description: string,
-   motorcycleParameters: { name: string, parameter: string } [],
-   covers: { data: StrapiImageArray [] },
+   motorcycleParameters: { name: string, parameter: string }[],
+   covers: { data: StrapiImageArray[] },
 }
 
-export default function InfoSection({content}: PropsWithChildren<{ content: InfoSection }>) {
-   const {name, description, motorcycleParameters, covers} = content;
+export default function InfoSection({ content }: PropsWithChildren<{ content: InfoSection }>) {
+   const { name, description, motorcycleParameters, covers } = content;
 
    const [index, setIndex] = useState(0);
    const [currentCover, setCurrentCover] = useState<string>(getSimpleImageUriArray(covers.data[0]));
@@ -74,6 +74,9 @@ export default function InfoSection({content}: PropsWithChildren<{ content: Info
                   fill
                   alt={name}
                   className={s.image}
+                  loading="lazy"
+                  placeholder="blur"
+                  blurDataURL="/loading-screen.png"
                />
 
                <Image
@@ -110,7 +113,7 @@ export default function InfoSection({content}: PropsWithChildren<{ content: Info
                <p className={s.desc}>{description}</p>
 
                <ul className={s.parameters}>
-                  {motorcycleParameters.map(({name, parameter}, key) => {
+                  {motorcycleParameters.map(({ name, parameter }, key) => {
                      return (
                         <li key={key}>
                            <span>{name.toUpperCase()}: </span>

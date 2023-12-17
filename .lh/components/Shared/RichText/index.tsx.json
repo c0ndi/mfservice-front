@@ -1,0 +1,22 @@
+{
+    "sourceFile": "components/Shared/RichText/index.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1702853330854,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1702853337733,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n                a: ({ node, ...props }) => <Link href={String(props.href)} target={\"_blank\"} {...props} />,\n                h1: ({ node, ...props }) => <h1 className={s.customH1} {...props} />,\n                p: ({ node, ...props }) => <p className={s.desc} {...props} />,\n                strong: ({ node, ...props }) => <strong className={s.customStrong} {...props} />,\n-               // ul: ({ node, ...props }) => <ul className={s.customUl} {...props} />,\n+               ul: ({ node, ...props }) => <ul className={s.customUl} {...props} />,\n                ol: ({ node, ...props }) => <ol className={s.customOl} type=\"I\" {...props} />,\n                li: ({ node, ...props }) => <li className={s.customLi}>\n                   {props.children[0]}\n                </li>,\n"
+                }
+            ],
+            "date": 1702853330854,
+            "name": "Commit-0",
+            "content": "import ReactMarkdown from 'react-markdown'\nimport s from './index.module.scss'\n// @ts-ignore\nimport remarkGfm from 'remark-gfm'\nimport rehypeRaw from \"rehype-raw\";\n// @ts-ignore\nimport DOMpurify from 'dompurify';\nimport Link from \"next/link\";\n\ntype RichText = {\n   desc: string\n}\n\nexport default function RichText({desc}: RichText) {\n   return (\n      <div className={s.wrapper}>\n         <ReactMarkdown\n            components={{\n               blockquote: ({node, ...props}) => <blockquote {...props}/>,\n               del: ({node, ...props}) => <span className={s.customDel}>{props.children[0]}</span>,\n               a: ({node, ...props}) => <Link href={String(props.href)} target={\"_blank\"} {...props}/>,\n               h1: ({node, ...props}) => <h1 className={s.customH1} {...props}/>,\n               p: ({node, ...props}) => <p className={s.desc} {...props} />,\n               strong: ({node, ...props}) => <strong className={s.customStrong} {...props} />,\n               ul: ({node, ...props}) => <ul className={s.customUl} {...props}/>,\n               ol: ({node, ...props}) => <ol className={s.customOl} type=\"I\" {...props}/>,\n               li: ({node, ...props}) => <li className={s.customLi}>\n                  {props.children[0]}\n               </li>,\n               u: ({node, ...props}) => <u {...props}/>,\n            }}\n            rehypePlugins={[rehypeRaw]}\n            remarkPlugins={[remarkGfm]}\n         >\n            {DOMpurify.sanitize(desc)}\n         </ReactMarkdown>\n      </div>\n   )\n}\n"
+        }
+    ]
+}

@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @font-face {
-  font-family: 'Classical', sans-serif;
+  font-family: "Classical", sans-serif;
   src: url("/fonts/Classical.ttf");
 }
 
 :root {
-  --primary: #F6831F;
+  --primary: #f6831f;
   --primary-hover: #b45600;
 }
 
@@ -37,7 +37,7 @@ img {
 }
 
 html {
-  font-family: 'Raleway', sans-serif !important;
+  font-family: "Raleway", sans-serif !important;
   overflow-x: hidden;
   scroll-behavior: smooth;
   transition: 0.3s;
@@ -112,7 +112,6 @@ html {
   background: var(--primary) !important;
 }
 
-
 @media (max-width: 1280px) {
   .swiper {
     overflow: visible !important;
@@ -120,7 +119,12 @@ html {
 }
 
 .markdown {
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-size: 27px;
     font-weight: 900;
     margin-bottom: 10px;

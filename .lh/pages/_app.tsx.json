@@ -6,21 +6,21 @@
             "activePatchIndex": 2,
             "patches": [
                 {
-                    "date": 1680603574463,
+                    "date": 1702853185302,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
                 },
                 {
-                    "date": 1680604005029,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n import '@/styles/globals.scss'\n import type { AppProps } from 'next/app'\n \n+const queryClient = new QueryClient()\n+\n export default function App({ Component, pageProps }: AppProps) {\n   return <Component {...pageProps} />\n }\n"
+                    "date": 1702853219793,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,15 +16,18 @@\n    const isLayout = layoutPaths.includes(router.pathname);\n \n    return (\n       <QueryClientProvider client={queryClient}>\n+         <div>\n+\n          {isLayout ? (\n             <Layout>\n                <Component {...pageProps} />\n             </Layout>\n          ) : (\n             <Component {...pageProps} />\n          )}\n \n+         </div>\n       </QueryClientProvider>\n    )\n }\n\\ No newline at end of file\n"
                 },
                 {
-                    "date": 1680722528544,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,20 @@\n import '@/styles/globals.scss'\n-import type { AppProps } from 'next/app'\n+import '@/styles/reset.scss'\n+import type {AppProps} from 'next/app'\n+import {\n+   QueryClient,\n+   QueryClientProvider, useQuery,\n+} from '@tanstack/react-query'\n+import Contact from \"@/components/Shared/Contact\";\n+import Layout from \"@/components/Layout\";\n \n const queryClient = new QueryClient()\n-\n-export default function App({ Component, pageProps }: AppProps) {\n-  return <Component {...pageProps} />\n-}\n+export default function App({Component, pageProps}: AppProps) {\n+   return (\n+      <QueryClientProvider client={queryClient}>\n+         <Layout>\n+            <Component {...pageProps} />\n+         </Layout>\n+      </QueryClientProvider>\n+   )\n+}\n\\ No newline at end of file\n"
+                    "date": 1702853229371,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n } from '@tanstack/react-query'\n import Layout from \"@/components/Layout\";\n import Image from \"next/image\";\n import { useRouter } from \"next/router\";\n+import { relative } from 'path';\n \n const queryClient = new QueryClient()\n export default function App({ Component, pageProps }: AppProps) {\n    const router = useRouter();\n@@ -16,18 +17,16 @@\n    const isLayout = layoutPaths.includes(router.pathname);\n \n    return (\n       <QueryClientProvider client={queryClient}>\n-         <div>\n-\n+         <div style={{position: relative}}>\n             {isLayout ? (\n                <Layout>\n                   <Component {...pageProps} />\n                </Layout>\n             ) : (\n                <Component {...pageProps} />\n             )}\n-\n          </div>\n       </QueryClientProvider>\n    )\n }\n\\ No newline at end of file\n"
                 }
             ],
-            "date": 1680603574463,
+            "date": 1702853185302,
             "name": "Commit-0",
-            "content": "import '@/styles/globals.scss'\nimport type { AppProps } from 'next/app'\n\nexport default function App({ Component, pageProps }: AppProps) {\n  return <Component {...pageProps} />\n}\n"
+            "content": "import '@/styles/globals.scss'\nimport '@/styles/reset.scss'\nimport type { AppProps } from 'next/app'\nimport {\n   QueryClient,\n   QueryClientProvider,\n} from '@tanstack/react-query'\nimport Layout from \"@/components/Layout\";\nimport Image from \"next/image\";\nimport { useRouter } from \"next/router\";\n\nconst queryClient = new QueryClient()\nexport default function App({ Component, pageProps }: AppProps) {\n   const router = useRouter();\n   const layoutPaths = [\"/\", \"/motocykle\", \"/motocykle/[slug]\"];\n   const isLayout = layoutPaths.includes(router.pathname);\n\n   return (\n      <QueryClientProvider client={queryClient}>\n         {isLayout ? (\n            <Layout>\n               <div>\n\n               <Component {...pageProps} />\n               </div>\n            </Layout>\n         ) : (\n            <Component {...pageProps} />\n         )}\n\n      </QueryClientProvider>\n   )\n}"
         }
     ]
 }

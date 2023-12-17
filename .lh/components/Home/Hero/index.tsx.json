@@ -3,24 +3,20 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 1,
             "patches": [
                 {
-                    "date": 1695029519202,
+                    "date": 1702852562960,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
                 },
                 {
-                    "date": 1695029536502,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,13 +27,13 @@\n             <Heading\n                heading={heading}\n                size={\"lg\"}\n             />\n-            <p className={s.desc}>{description}sss</p>\n+            <p className={s.desc}>{description}</p>\n \n             <Link href={buttonLink}>\n                <button className={s.button}>\n-                  {buttonLabel}\n+                  {buttonLabel}ss\n                </button>\n             </Link>\n          </div>\n \n"
-                },
-                {
-                    "date": 1695029543080,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,13 +27,13 @@\n             <Heading\n                heading={heading}\n                size={\"lg\"}\n             />\n-            <p className={s.desc}>{description}</p>\n+            <p className={s.desc}>{description} ss</p>\n \n             <Link href={buttonLink}>\n                <button className={s.button}>\n-                  {buttonLabel}ss\n+                  {buttonLabel}\n                </button>\n             </Link>\n          </div>\n \n"
+                    "date": 1702852886433,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n                fill\n                priority\n                placeholder=\"blur\"\n                blurDataURL=\"/loading-screen.png\"\n-               sizes='(max-width: 768px) 100vw'\n+               sizes='(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw'\n             />\n             {/* <CustomImage\n                alt={\"MotorcycleImage\"}\n                src={getSimpleImageUri(cover)}\n"
                 }
             ],
-            "date": 1695029519202,
+            "date": 1702852562960,
             "name": "Commit-0",
-            "content": "import s from './index.module.scss';\n\nimport {StrapiImage} from \"@/types/types\";\nimport {PropsWithChildren} from \"react\";\nimport {getSimpleImageUri} from \"@/utils/getSimpleImageUri\";\n\nimport Link from \"next/link\";\nimport Image from \"next/image\";\nimport Heading from \"@/components/Shared/Heading\";\nimport CustomImage from \"@/components/Shared/CustomImage\";\n\ntype Hero = {\n   heading: string;\n   description: string;\n   buttonLink: string;\n   buttonLabel: string;\n   cover: StrapiImage;\n}\n\nexport default function Hero({content}: PropsWithChildren<{ content: Hero }>) {\n   const {heading, description, buttonLink, buttonLabel, cover} = content;\n   return (\n      // @ts-ignore\n      <section className={s.wrapper}>\n\n         <div className={s.contentWrapper}>\n            <Heading\n               heading={heading}\n               size={\"lg\"}\n            />\n            <p className={s.desc}>{description}sss</p>\n\n            <Link href={buttonLink}>\n               <button className={s.button}>\n                  {buttonLabel}\n               </button>\n            </Link>\n         </div>\n\n         <div className={s.imageWrapper}>\n            {/*<Image*/}\n            {/*   src={getSimpleImageUri(cover)}*/}\n            {/*   alt={\"Motorcycle image\"}*/}\n            {/*   fill*/}\n            {/*/>*/}\n            <CustomImage\n               alt={\"MotorcycleImage\"}\n               src={getSimpleImageUri(cover)}\n               fill\n               priority\n            />\n         </div>\n      </section>\n   )\n}"
+            "content": "import s from './index.module.scss';\n\nimport { StrapiImage } from \"@/types/types\";\nimport { PropsWithChildren } from \"react\";\nimport { getSimpleImageUri } from \"@/utils/getSimpleImageUri\";\n\nimport Link from \"next/link\";\nimport Image from \"next/image\";\nimport Heading from \"@/components/Shared/Heading\";\nimport CustomImage from \"@/components/Shared/CustomImage\";\n\ntype Hero = {\n   heading: string;\n   description: string;\n   buttonLink: string;\n   buttonLabel: string;\n   cover: StrapiImage;\n}\n\nexport default function Hero({ content }: PropsWithChildren<{ content: Hero }>) {\n   const { heading, description, buttonLink, buttonLabel, cover } = content;\n   return (\n      // @ts-ignore\n      <section className={s.wrapper}>\n\n         <div className={s.contentWrapper}>\n            <Heading\n               heading={heading}\n               size={\"lg\"}\n            />\n            <p className={s.desc}>{description}</p>\n\n            <Link href={buttonLink}>\n               <button className={s.button}>\n                  {buttonLabel}\n               </button>\n            </Link>\n         </div>\n\n         <div className={s.imageWrapper}>\n            <Image\n               src={getSimpleImageUri(cover)}\n               alt={\"Motorcycle image\"}\n               fill\n               priority\n               placeholder=\"blur\"\n               blurDataURL=\"/loading-screen.png\"\n               sizes='(max-width: 768px) 100vw'\n            />\n            {/* <CustomImage\n               alt={\"MotorcycleImage\"}\n               src={getSimpleImageUri(cover)}\n               fill\n            /> */}\n         </div>\n      </section>\n   )\n}"
         }
     ]
 }

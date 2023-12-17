@@ -1,14 +1,14 @@
 import s from './index.module.scss'
-import {StrapiImageArray} from "@/types/types";
+import { StrapiImageArray } from "@/types/types";
 import Image from "next/image";
-import {getSimpleImageUriArray} from "@/utils/getSimpleImageUriArray";
+import { getSimpleImageUriArray } from "@/utils/getSimpleImageUriArray";
 
 type Grid = {
-   covers: { data: StrapiImageArray [] };
+   covers: { data: StrapiImageArray[] };
 }
 
-export default function Grid({covers}: Grid) {
-   const {data} = covers;
+export default function Grid({ covers }: Grid) {
+   const { data } = covers;
    return (
       <div className={s.wrapper}>
          <div className={s.topContainer}>
@@ -17,6 +17,7 @@ export default function Grid({covers}: Grid) {
                   src={getSimpleImageUriArray(data[0])}
                   alt={"First-Image"}
                   fill
+                  sizes='(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw'
                />
             </div>
 
@@ -25,6 +26,7 @@ export default function Grid({covers}: Grid) {
                   src={getSimpleImageUriArray(data[1])}
                   alt={"Second-Image"}
                   fill
+                  sizes='(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw'
                />
             </div>
          </div>
@@ -35,6 +37,7 @@ export default function Grid({covers}: Grid) {
                   src={getSimpleImageUriArray(data[2])}
                   alt={"Third-Image"}
                   fill
+                  sizes='(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw'
                />
             </div>
 
@@ -43,6 +46,7 @@ export default function Grid({covers}: Grid) {
                   src={getSimpleImageUriArray(data[2])}
                   alt={"Fourth-Image"}
                   fill
+                  sizes='(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw'
                />
             </div>
          </div>

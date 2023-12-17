@@ -1,0 +1,22 @@
+{
+    "sourceFile": "components/Home/About/Grid/index.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1702852682090,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1702852905258,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,18 +16,18 @@\n                <Image\n                   src={getSimpleImageUriArray(data[0])}\n                   alt={\"First-Image\"}\n                   fill\n-                  sizes='(max-width: 768px) 100vw'\n+               sizes='(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw'\n                />\n             </div>\n \n             <div className={`${s.photoContainer} ${s.secondContainer}`}>\n                <Image\n                   src={getSimpleImageUriArray(data[1])}\n                   alt={\"Second-Image\"}\n                   fill\n-                  sizes='(max-width: 768px) 100vw'\n+                  sizes='(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw'\n                />\n             </div>\n          </div>\n \n@@ -36,18 +36,18 @@\n                <Image\n                   src={getSimpleImageUriArray(data[2])}\n                   alt={\"Third-Image\"}\n                   fill\n-                  sizes='(max-width: 768px) 100vw'\n+                  sizes='(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw'\n                />\n             </div>\n \n             <div className={`${s.photoContainer} ${s.fourthContainer}`}>\n                <Image\n                   src={getSimpleImageUriArray(data[2])}\n                   alt={\"Fourth-Image\"}\n                   fill\n-                  sizes='(max-width: 768px) 100vw'\n+                  sizes='(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw'\n                />\n             </div>\n          </div>\n       </div>\n"
+                }
+            ],
+            "date": 1702852682090,
+            "name": "Commit-0",
+            "content": "import s from './index.module.scss'\nimport { StrapiImageArray } from \"@/types/types\";\nimport Image from \"next/image\";\nimport { getSimpleImageUriArray } from \"@/utils/getSimpleImageUriArray\";\n\ntype Grid = {\n   covers: { data: StrapiImageArray[] };\n}\n\nexport default function Grid({ covers }: Grid) {\n   const { data } = covers;\n   return (\n      <div className={s.wrapper}>\n         <div className={s.topContainer}>\n            <div className={`${s.photoContainer} ${s.firstContainer}`}>\n               <Image\n                  src={getSimpleImageUriArray(data[0])}\n                  alt={\"First-Image\"}\n                  fill\n                  sizes='(max-width: 768px) 100vw'\n               />\n            </div>\n\n            <div className={`${s.photoContainer} ${s.secondContainer}`}>\n               <Image\n                  src={getSimpleImageUriArray(data[1])}\n                  alt={\"Second-Image\"}\n                  fill\n                  sizes='(max-width: 768px) 100vw'\n               />\n            </div>\n         </div>\n\n         <div className={s.bottomContainer}>\n            <div className={`${s.photoContainer} ${s.thirdContainer}`}>\n               <Image\n                  src={getSimpleImageUriArray(data[2])}\n                  alt={\"Third-Image\"}\n                  fill\n                  sizes='(max-width: 768px) 100vw'\n               />\n            </div>\n\n            <div className={`${s.photoContainer} ${s.fourthContainer}`}>\n               <Image\n                  src={getSimpleImageUriArray(data[2])}\n                  alt={\"Fourth-Image\"}\n                  fill\n                  sizes='(max-width: 768px) 100vw'\n               />\n            </div>\n         </div>\n      </div>\n   )\n}"
+        }
+    ]
+}

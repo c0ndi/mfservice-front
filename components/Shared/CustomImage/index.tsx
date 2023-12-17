@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 type CustomImage = {
@@ -10,7 +10,7 @@ type CustomImage = {
    quality?: number,
 }
 
-export default function CustomImage({alt, ...props}: CustomImage) {
+export default function CustomImage({ alt, ...props }: CustomImage) {
    const [src, setSrc] = useState(props.src);
 
    return (
@@ -20,7 +20,8 @@ export default function CustomImage({alt, ...props}: CustomImage) {
          alt={alt}
          onError={() => setSrc('/error-screen.svg')}
          placeholder="blur"
-         blurDataURL="/loading-screen.svg"
+         loading="lazy"
+         blurDataURL="/loading-screen.png"
       />
    );
 }
