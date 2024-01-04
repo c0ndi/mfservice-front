@@ -1,0 +1,18 @@
+{
+    "sourceFile": "components/Home/ServiceStages/index.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1704360722496,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1704360722496,
+            "name": "Commit-0",
+            "content": "import { PropsWithChildren } from \"react\";\nimport { StrapiImage } from \"@/types/types\";\nimport { getSimpleImageUri } from \"@/utils/getSimpleImageUri\";\nimport Image from \"next/image\";\nimport s from './index.module.scss';\nimport Heading from \"@/components/Shared/Heading\";\n\nimport { Swiper, SwiperSlide } from 'swiper/react';\nimport 'swiper/css';\nimport { Pagination } from \"swiper\";\n\n\ntype SingleStage = {\n   title: string;\n   description: string;\n   icon: StrapiImage;\n}\n\nexport type ServiceStages = {\n   heading: string;\n   singleStages: SingleStage[];\n}\n\nfunction SingleStage({ content, index }: PropsWithChildren<{ content: SingleStage, index: number }>) {\n   const { title, description, icon } = content;\n   return (\n      <div className={s.singleStageWrapper}>\n         <p className={s.index}>\n            0\n            <span>\n               {index + 1}\n            </span>\n         </p>\n         <div className={s.imageWrapper}>\n            <Image\n               src={getSimpleImageUri(icon)}\n               alt={title}\n               width={100}\n               height={100}\n            />\n         </div>\n\n         <p className={s.title}>{title}</p>\n         <p className={s.desc}>{description}</p>\n      </div>\n   )\n}\n\nexport default function ServiceStages({ content }: PropsWithChildren<{ content: ServiceStages }>) {\n   const { heading, singleStages } = content;\n   return (\n      // @ts-ignore\n      <section className={s.wrapper} name={\"obsługa\"}>\n         <Heading\n            heading={heading}\n            size={\"md\"}\n         />\n\n         <div className={s.stagesWrapper}>\n            {singleStages.map((stage, index) =>\n               <SingleStage\n                  index={index}\n                  content={stage}\n                  key={index}\n               />\n            )}\n         </div>\n\n         <div className={s.slider}>\n            <Swiper\n               spaceBetween={50}\n               slidesPerView={1}\n               modules={[Pagination]}\n               pagination={{ clickable: true }}\n            >\n               {singleStages.map((stage, index) => (\n                  <SwiperSlide key={index}>\n                     <SingleStage\n                        content={stage}\n                        index={index}\n                     />\n                  </SwiperSlide>\n               ))}\n            </Swiper>\n         </div>\n      </section>\n   )\n}"
+        }
+    ]
+}

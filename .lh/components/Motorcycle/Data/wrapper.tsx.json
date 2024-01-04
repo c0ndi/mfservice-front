@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 4,
+            "activePatchIndex": 5,
             "patches": [
                 {
                     "date": 1704356990808,
@@ -24,6 +24,10 @@
                 {
                     "date": 1704358476881,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,27 +8,27 @@\n import Data from '.'\n import Seo from '@/components/Shared/Seo'\n \n export function MotorcycleWrapper({ }) {\n-  // const router = useRouter()\n-  // const { slug } = router.query\n+  const router = useRouter()\n+  const { slug } = router.query\n \n-  // const { data, isLoading, isError } = useQuery({ queryKey: [slug], queryFn: () => getData(`/motorcycles`, slug) })\n+  const { data, isLoading, isError } = useQuery({ queryKey: [slug], queryFn: () => getData(`/motorcycles`, slug) })\n \n-  // const loading = useLoading(isLoading, 500)\n+  const loading = useLoading(isLoading, 500)\n \n-  // if (loading) {\n-  //   return <Loading />\n-  // }\n+  if (loading) {\n+    return <Loading />\n+  }\n \n-  // if (isError || !data.data.length) {\n-  //   return <ErrorComponent redirect />\n-  // }\n+  if (isError || !data.data.length) {\n+    return <ErrorComponent redirect />\n+  }\n \n-  // const content = data.data[0].attributes;\n+  const content = data.data[0].attributes;\n   return (\n     <>\n-      {/* <Seo seo={content.seo} /> */}\n-      {/* <Data content={content} /> */}\n+      <Seo seo={content.seo} />\n+      <Data content={content} />\n     </>\n   )\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704359689477,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,34 @@\n+import ErrorComponent from '@/components/Shared/ErrorComponent'\n+import Loading from '@/components/Shared/Loading'\n+import { useLoading } from '@/hooks/useLoading'\n+import { getData } from '@/utils/getData'\n+import { useQuery } from '@tanstack/react-query'\n+import { useRouter } from 'next/router'\n+import React from 'react'\n+import Data from '.'\n+import Seo from '@/components/Shared/Seo'\n+\n+export function MotorcycleWrapper({ }) {\n+  const router = useRouter()\n+  const { slug } = router.query\n+\n+  const { data, isLoading, isError } = useQuery({ queryKey: [slug], queryFn: () => getData(`/motorcycles`, slug) })\n+\n+  const loading = useLoading(isLoading, 500)\n+\n+  if (loading) {\n+    return <Loading />\n+  }\n+\n+  if (isError || !data.data.length) {\n+    return <ErrorComponent redirect />\n+  }\n+\n+  const content = data.data[0].attributes;\n+  return (\n+    <>\n+      <Seo seo={content.seo} />\n+      <Data content={content} />\n+    </>\n+  )\n+}\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1704356990808,

@@ -9,7 +9,7 @@ import Grid from "@/components/Home/About/Grid";
 import FaqIcon from "@/public/icons/faq-icon.svg";
 import Image from "next/image";
 
-type About = {
+export type AboutType = {
    heading: string;
    description: string;
    buttonLabel: string;

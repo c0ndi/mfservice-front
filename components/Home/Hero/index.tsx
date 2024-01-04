@@ -9,7 +9,7 @@ import Image from "next/image";
 import Heading from "@/components/Shared/Heading";
 import CustomImage from "@/components/Shared/CustomImage";
 
-type Hero = {
+export type HeroType = {
    heading: string;
    description: string;
    buttonLink: string;
@@ -17,7 +17,7 @@ type Hero = {
    cover: StrapiImage;
 }
 
-export default function Hero({ content }: PropsWithChildren<{ content: Hero }>) {
+export default function Hero({ content }: PropsWithChildren<{ content: HeroType }>) {
    const { heading, description, buttonLink, buttonLabel, cover } = content;
    return (
       // @ts-ignore

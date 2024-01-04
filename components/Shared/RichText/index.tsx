@@ -32,7 +32,7 @@ export default function RichText({ desc }: RichText) {
             rehypePlugins={[rehypeRaw]}
             remarkPlugins={[remarkGfm]}
          >
-            {DOMpurify.sanitize(desc)}
+            {desc}
          </ReactMarkdown>
       </div>
    )

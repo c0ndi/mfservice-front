@@ -1,13 +1,13 @@
-import {PropsWithChildren} from "react";
-import {StrapiImage} from "@/types/types";
-import {getSimpleImageUri} from "@/utils/getSimpleImageUri";
+import { PropsWithChildren } from "react";
+import { StrapiImage } from "@/types/types";
+import { getSimpleImageUri } from "@/utils/getSimpleImageUri";
 import Image from "next/image";
 import s from './index.module.scss';
 import Heading from "@/components/Shared/Heading";
 
-import {Swiper, SwiperSlide} from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import {Pagination} from "swiper";
+import { Pagination } from "swiper";
 
 
 type SingleStage = {
@@ -16,13 +16,13 @@ type SingleStage = {
    icon: StrapiImage;
 }
 
-type ServiceStages = {
+export type ServiceStages = {
    heading: string;
-   singleStages: SingleStage [];
+   singleStages: SingleStage[];
 }
 
-function SingleStage({content, index}: PropsWithChildren<{ content: SingleStage, index: number }>) {
-   const {title, description, icon} = content;
+function SingleStage({ content, index }: PropsWithChildren<{ content: SingleStage, index: number }>) {
+   const { title, description, icon } = content;
    return (
       <div className={s.singleStageWrapper}>
          <p className={s.index}>
@@ -46,8 +46,8 @@ function SingleStage({content, index}: PropsWithChildren<{ content: SingleStage,
    )
 }
 
-export default function ServiceStages({content}: PropsWithChildren<{ content: ServiceStages }>) {
-   const {heading, singleStages} = content;
+export default function ServiceStages({ content }: PropsWithChildren<{ content: ServiceStages }>) {
+   const { heading, singleStages } = content;
    return (
       // @ts-ignore
       <section className={s.wrapper} name={"obsługa"}>
@@ -71,7 +71,7 @@ export default function ServiceStages({content}: PropsWithChildren<{ content: Se
                spaceBetween={50}
                slidesPerView={1}
                modules={[Pagination]}
-               pagination={{clickable: true}}
+               pagination={{ clickable: true }}
             >
                {singleStages.map((stage, index) => (
                   <SwiperSlide key={index}>

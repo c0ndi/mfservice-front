@@ -1,0 +1,26 @@
+{
+    "sourceFile": "components/Layout/index.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1704359480066,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1704359486299,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { useQuery } from \"@tanstack/react-query\";\n+import { QueryClient, dehydrate, useQuery } from \"@tanstack/react-query\";\n import { getData } from \"@/utils/getData\";\n import { ReactNode } from \"react\";\n import Contact from \"@/components/Shared/Contact\";\n import Faq from \"@/components/Shared/FAQ\";\n"
+                },
+                {
+                    "date": 1704359497171,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,9 +65,9 @@\n export async function getStaticProps() {\n    const queryClient = new QueryClient()\n \n    await queryClient.prefetchQuery({\n-      queryKey: ['home'],\n+      queryKey: ['shared'],\n       queryFn: () => getData('/shared'),\n    })\n \n    return {\n"
+                }
+            ],
+            "date": 1704359480066,
+            "name": "Commit-0",
+            "content": "import {useQuery} from \"@tanstack/react-query\";\nimport {getData} from \"@/utils/getData\";\nimport {ReactNode} from \"react\";\nimport Contact from \"@/components/Shared/Contact\";\nimport Faq from \"@/components/Shared/FAQ\";\nimport Footer from \"@/components/Shared/Footer\";\nimport Navbar from \"@/components/Shared/Navbar\";\nimport Image from \"next/image\";\nimport {useRouter} from \"next/router\";\nimport ErrorComponent from \"@/components/Shared/ErrorComponent\";\nimport WelcomeLoading from \"@/components/Shared/WelcomeLoading\";\nimport {useLoading} from \"@/hooks/useLoading\";\n\nexport default function Layout({ children }: { children: ReactNode }) {\n   const {data, isLoading, isError} = useQuery({queryKey: ['shared'], queryFn: () => getData(\"/shared\")})\n\n   const loading = useLoading(isLoading);\n\n   if(loading) {\n      return <WelcomeLoading/>\n   }\n\n   if(isError) {\n      return <ErrorComponent/>\n   }\n\n   const {phoneNumber, nipNumber, address, facebookLink, instagramLink, formComponent, nav, faqComponent} = data.data.attributes;\n\n   const contactContent = {\n      formComponent,\n      phoneNumber,\n      facebookLink,\n      instagramLink\n   }\n\n   const navContent = {\n      links: nav.links,\n      instagramLink,\n      facebookLink,\n   }\n\n   const footerContent = {\n      nipNumber,\n      phoneNumber,\n      address,\n      facebookLink,\n      instagramLink,\n   }\n\n   return (\n      <>\n         <Navbar content={navContent} />\n         <main className={\"pageWrapper\"}>\n            {children}\n            <Faq content={faqComponent} />\n            <Contact content={contactContent} />\n         </main>\n\n         <Footer content={footerContent}/>\n      </>\n   )\n}\n\n\nexport async function getStaticProps() {\n   const queryClient = new QueryClient()\n\n   await queryClient.prefetchQuery({\n      queryKey: ['home'],\n      queryFn: () => getData('/home'),\n   })\n\n   return {\n      props: {\n         dehydratedState: dehydrate(queryClient),\n      },\n   }\n}"
+        }
+    ]
+}
