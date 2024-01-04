@@ -101,5 +101,6 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
          data: data.data[0],
          shared
       },
+      revalidate: 30,
    }
 }

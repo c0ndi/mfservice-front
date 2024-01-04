@@ -96,5 +96,6 @@ export async function getStaticProps() {
          data,
          shared
       },
+      revalidate: 30,
    }
 }
