@@ -1,13 +1,13 @@
-import {PropsWithChildren} from "react";
-import {getSimpleImageUri} from "@/utils/getSimpleImageUri";
-import {strapiURL} from "@/config/axios";
-import {StrapiImage} from "@/types/types";
+import { PropsWithChildren } from "react";
+import { getSimpleImageUri } from "@/utils/getSimpleImageUri";
+import { strapiURL } from "@/config/axios";
+import { StrapiImage } from "@/types/types";
 import Head from "next/head";
 
 type Seo = {
    metaTitle: string;
    metaDescription: string;
-   metaImage: string;
+   metaImage: StrapiImage;
    metaSocialFacebook: {
       title: string;
       description: string;
@@ -21,7 +21,7 @@ type Seo = {
    canonicalURL?: string;
 }
 
-export default function Seo({seo}: PropsWithChildren<{ seo: Seo }>) {
+export default function Seo({ seo }: PropsWithChildren<{ seo: Seo }>) {
    const seoData = seo;
    const seoStructuredData = seo?.structuredData;
    return (
@@ -60,7 +60,7 @@ export default function Seo({seo}: PropsWithChildren<{ seo: Seo }>) {
                />
                <meta
                   property="og:image"
-                  content={strapiURL + seoData?.metaImage}
+                  content={strapiURL + seoData?.metaImage.data.attributes.url}
                   key="og:image"
                />
                <link
