@@ -40,6 +40,7 @@ export default function Home() {
             draggable={false}
             style={{ position: "absolute", top: 0, zIndex: -1, left: 0, userSelect: "none" }}
          />
+         <p>123123123</p>
          <Image
             src="/gradients/gradient-faq-home.png"
             alt="GradientAbout"
