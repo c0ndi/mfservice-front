@@ -1,0 +1,22 @@
+{
+    "sourceFile": "components/Motorcycle/CoversSection/index.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1702854841020,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1702854847092,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,9 @@\n                   <CustomImage\n                      src={getSimpleImageUriArray(cover)}\n                      alt={`cover-${key}`}\n                      fill\n+                     sizes=\"(max-width: 768px) 100vw\"\n                      quality={15}\n                   />\n                </div>\n             )\n"
+                }
+            ],
+            "date": 1702854841019,
+            "name": "Commit-0",
+            "content": "import { StrapiImageArray } from \"@/types/types\";\nimport Image from \"next/image\";\nimport { getSimpleImageUriArray } from \"@/utils/getSimpleImageUriArray\";\nimport s from './index.module.scss'\nimport CustomImage from \"@/components/Shared/CustomImage\";\n\ntype CoversSection = {\n   covers: { data: StrapiImageArray[] },\n   setCurrentCover: (cover: string) => void,\n}\n\nexport default function CoversSection({ covers, setCurrentCover }: CoversSection) {\n   return (\n      <div className={s.wrapper}>\n         {covers.data.map((cover, key) => {\n            return (\n               <div\n                  key={key}\n                  className={s.coversWrapper}\n                  onClick={() => setCurrentCover(getSimpleImageUriArray(cover))}\n               >\n                  <CustomImage\n                     src={getSimpleImageUriArray(cover)}\n                     alt={`cover-${key}`}\n                     fill\n                     quality={15}\n                  />\n               </div>\n            )\n         })}\n      </div>\n   )\n}"
+        }
+    ]
+}

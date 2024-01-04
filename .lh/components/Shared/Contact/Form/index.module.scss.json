@@ -1,0 +1,30 @@
+{
+    "sourceFile": "components/Shared/Contact/Form/index.module.scss",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1702853894545,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1702854482377,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n     font-weight: 500;\n     margin-bottom: 12px;\n \n     &::placeholder {\n-      font-family: \"Inter\";\n+      font-family: \"REM\";\n       font-weight: 600;\n     }\n   }\n \n@@ -42,9 +42,9 @@\n     resize: none;\n     height: 120px;\n \n     &::placeholder {\n-      font-family: \"Inter\";\n+      font-family: \"REM\";\n       font-weight: 600;\n     }\n   }\n \n"
+                },
+                {
+                    "date": 1702854505293,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n     font-weight: 500;\n     margin-bottom: 12px;\n \n     &::placeholder {\n-      font-family: \"REM\";\n+      font-family: \"RALEWAY\";\n       font-weight: 600;\n     }\n   }\n \n@@ -42,9 +42,9 @@\n     resize: none;\n     height: 120px;\n \n     &::placeholder {\n-      font-family: \"REM\";\n+      font-family: \"RALEWAY\";\n       font-weight: 600;\n     }\n   }\n \n"
+                },
+                {
+                    "date": 1702854527060,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n     font-weight: 500;\n     margin-bottom: 12px;\n \n     &::placeholder {\n-      font-family: \"RALEWAY\";\n+      font-family: \"Raleway\";\n       font-weight: 600;\n     }\n   }\n \n@@ -42,9 +42,9 @@\n     resize: none;\n     height: 120px;\n \n     &::placeholder {\n-      font-family: \"RALEWAY\";\n+      font-family: \"Raleway\";\n       font-weight: 600;\n     }\n   }\n \n"
+                }
+            ],
+            "date": 1702853894545,
+            "name": "Commit-0",
+            "content": "@import '@/styles/shared.scss';\n\n.form {\n  width: 50%;\n  position: relative;\n  display: flex;\n  flex-direction: column;\n\n  button {\n    width: 100%;\n  }\n\n  label {\n    font-size: 13px;\n    font-weight: 700;\n    padding: 8px 0;\n  }\n\n  input {\n    padding: 12px 16px;\n    outline: none;\n    border-radius: 5px;\n    font-size: 15px;\n    color: rgba(0, 0, 0, 0.8);\n    font-weight: 500;\n    margin-bottom: 12px;\n\n    &::placeholder {\n      font-family: \"Inter\";\n      font-weight: 600;\n    }\n  }\n\n  textarea {\n    padding: 12px 16px;\n    outline: none;\n    border-radius: 5px;\n    font-size: 15px;\n    color: rgba(0, 0, 0, 0.8);\n    font-weight: 500;\n    margin-bottom: 12px;\n    resize: none;\n    height: 120px;\n\n    &::placeholder {\n      font-family: \"Inter\";\n      font-weight: 600;\n    }\n  }\n\n  input[type=\"checkbox\"] {\n    height: 18px;\n    width: 18px;\n    margin: 0;\n    padding: 0;\n    opacity: 1;\n    appearance: none;\n    border-radius: 3px;\n    background: #fff;\n    position: absolute;\n    margin-right: 10px;\n    cursor: pointer;\n  }\n\n  input[type=\"checkbox\"]:checked {\n    background: #F6831F;\n  }\n\n  input[type=\"checkbox\"]:checked:before, input[type=\"checkbox\"]:checked:after {\n    content: \"\";\n    position: absolute;\n    height: 2px;\n    background: #fff;\n  }\n\n  input[type=\"checkbox\"]:checked:before {\n    width: 7px;\n    top: 10px;\n    left: 3px;\n    transform: rotate(44deg);\n    border-radius: 100px;\n  }\n\n  input[type=\"checkbox\"]:checked:after {\n    width: 10px;\n    top: 8px;\n    left: 6px;\n    transform: rotate(-55deg);\n    border-radius: 100px;\n  }\n\n  input[type=\"checkbox\"]:focus {\n    outline: none;\n  }\n\n  .invalidLabel, .invalidClause {\n    color: #C30000;\n  }\n\n  .invalidInput {\n    &::placeholder {\n      position: absolute;\n      right: 16px;\n      color: #C30000;\n    }\n  }\n}\n\n.checkboxWrapper {\n  margin: 12px 0;\n  p {\n    margin-left: 30px;\n    color: rgba(255, 255, 255, 0.8);\n    font-size: 13px;\n    cursor: pointer;\n    font-weight: 400;\n\n    &::before {\n      content: \"*\";\n      position: absolute;\n      transform: translateX(-5px);\n      color: #C30000;\n    }\n  }\n}\n\n@media (max-width: 1080px){\n  .form {\n    width: 100%;\n\n    input, textarea, label {\n      font-size: 12px;\n    }\n\n    textarea {\n      height: 75px;\n    }\n  }\n}\n\n"
+        }
+    ]
+}

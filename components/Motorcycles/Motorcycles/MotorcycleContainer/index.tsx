@@ -24,9 +24,8 @@ export default function MotorcycleContainer({ content }: PropsWithChildren<{ con
                   fill
                   quality={50}
                   placeholder="blur"
-                  loading="lazy"
                   blurDataURL="/loading-screen.png"
-                  sizes='(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw'
+               // sizes='(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw'
                />
             </div>
 

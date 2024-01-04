@@ -1,0 +1,30 @@
+{
+    "sourceFile": "components/Shared/Logo/index.module.scss",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1702853893699,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1702854482377,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   flex-direction: column;\n \n   .logoHeading {\n     font-size: 24px;\n-    font-family: \"Inter\";\n+    font-family: \"REM\";\n     font-weight: 400;\n \n     .spanOne {\n       color: var(--primary);\n"
+                },
+                {
+                    "date": 1702854505295,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   flex-direction: column;\n \n   .logoHeading {\n     font-size: 24px;\n-    font-family: \"REM\";\n+    font-family: \"RALEWAY\";\n     font-weight: 400;\n \n     .spanOne {\n       color: var(--primary);\n"
+                },
+                {
+                    "date": 1702854527061,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   flex-direction: column;\n \n   .logoHeading {\n     font-size: 24px;\n-    font-family: \"RALEWAY\";\n+    font-family: \"Raleway\";\n     font-weight: 400;\n \n     .spanOne {\n       color: var(--primary);\n"
+                }
+            ],
+            "date": 1702853893699,
+            "name": "Commit-0",
+            "content": ".logo {\n  margin-right: auto;\n  z-index: 9999;\n  display: flex;\n  flex-direction: column;\n\n  .logoHeading {\n    font-size: 24px;\n    font-family: \"Inter\";\n    font-weight: 400;\n\n    .spanOne {\n      color: var(--primary);\n      font-weight: 700;\n    }\n\n    .spanTwo {\n      color: var(--secondary);\n      font-weight: 700;\n    }\n  }\n\n  .logoSubheading {\n    transform: translateY(-12px);\n    display: inline-block;\n    font-size: 13px;\n    font-weight: 200;\n\n    span {\n      color: var(--primary);\n      font-weight: 700;\n    }\n  }\n}\n\n@media (max-width: 639px) {\n  .logo {\n    .logoHeading {\n      font-size: 20px;\n    }\n\n    .logoSubheading {\n      font-size: 10px;\n    }\n  }\n}\n\n@media (max-width: 281px) {\n  .wrapper {\n    .logo {\n      .logoHeading {\n        font-size: 18px;\n      }\n\n      .logoSubheading {\n        font-size: 8px;\n      }\n    }\n  }\n}\n"
+        }
+    ]
+}

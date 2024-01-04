@@ -1,0 +1,18 @@
+{
+    "sourceFile": "pages/motocykle/[slug].tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1704356374102,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1704356374102,
+            "name": "Commit-0",
+            "content": "import Head from 'next/head'\nimport { useQuery } from '@tanstack/react-query'\nimport { getData } from \"@/utils/getData\";\nimport { useRouter } from \"next/router\";\nimport Heading from \"@/components/Shared/Heading\";\nimport { Key } from \"react\";\nimport Data from \"@/components/Motorcycle/Data\";\nimport Seo from \"@/components/Shared/Seo\";\nimport Image from \"next/image\";\nimport ErrorComponent from \"@/components/Shared/ErrorComponent\";\nimport WelcomeLoading from \"@/components/Shared/WelcomeLoading\";\nimport Loading from \"@/components/Shared/Loading\";\nimport { useLoading } from '@/hooks/useLoading';\n\nexport default function Home() {\n   const router = useRouter()\n   const { slug } = router.query\n\n   const { data, isLoading, isError } = useQuery({ queryKey: [slug], queryFn: () => getData(`/motorcycles`, slug) })\n\n   const loading = useLoading(isLoading, 500)\n\n   if (loading) {\n      return <Loading />\n   }\n\n   if (isError || !data.data.length) {\n      return <ErrorComponent redirect />\n   }\n\n   const content = data.data[0].attributes;\n   return (\n      <>\n         <Seo seo={content.seo} />\n         {/* test */}\n         <Image\n            src=\"/gradients/gradient-hero-motorcycle.png\"\n            alt=\"GradientHero\"\n            fill\n            draggable={false}\n            style={{ position: \"absolute\", top: 0, zIndex: -1, left: 0, userSelect: \"none\" }}\n         />\n         <Image\n            src=\"/gradients/gradient-faq-home.png\"\n            alt=\"GradientAbout\"\n            fill\n            style={{ position: \"absolute\", top: \"80%\", left: 0, zIndex: -1, userSelect: \"none\" }}\n            draggable={false}\n         />\n         <Data content={content} />\n      </>\n   )\n}\n"
+        }
+    ]
+}

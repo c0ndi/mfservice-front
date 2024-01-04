@@ -32,6 +32,7 @@ export default function Home() {
    return (
       <>
          <Seo seo={content.seo} />
+         {/* test */}
          <Image
             src="/gradients/gradient-hero-motorcycle.png"
             alt="GradientHero"
