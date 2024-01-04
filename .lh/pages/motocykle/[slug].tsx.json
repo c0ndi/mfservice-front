@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 7,
             "patches": [
                 {
                     "date": 1704356374102,
@@ -12,6 +12,30 @@
                 {
                     "date": 1704356557266,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,8 +39,9 @@\n             fill\n             draggable={false}\n             style={{ position: \"absolute\", top: 0, zIndex: -1, left: 0, userSelect: \"none\" }}\n          />\n+         <p>123123123</p>\n          <Image\n             src=\"/gradients/gradient-faq-home.png\"\n             alt=\"GradientAbout\"\n             fill\n"
+                },
+                {
+                    "date": 1704356747708,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,8 @@\n             fill\n             draggable={false}\n             style={{ position: \"absolute\", top: 0, zIndex: -1, left: 0, userSelect: \"none\" }}\n          />\n-         <p>123123123</p>\n          <Image\n             src=\"/gradients/gradient-faq-home.png\"\n             alt=\"GradientAbout\"\n             fill\n"
+                },
+                {
+                    "date": 1704356949118,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,9 @@\n import ErrorComponent from \"@/components/Shared/ErrorComponent\";\n import WelcomeLoading from \"@/components/Shared/WelcomeLoading\";\n import Loading from \"@/components/Shared/Loading\";\n import { useLoading } from '@/hooks/useLoading';\n+import { MotorcycleWrapper } from '@/components/Motorcycle/Data/wrapper';\n \n export default function Home() {\n    const router = useRouter()\n    const { slug } = router.query\n@@ -46,7 +47,8 @@\n             style={{ position: \"absolute\", top: \"80%\", left: 0, zIndex: -1, userSelect: \"none\" }}\n             draggable={false}\n          />\n          <Data content={content} />\n+         <MotorcycleWrapper />\n       </>\n    )\n }\n"
+                },
+                {
+                    "date": 1704356959099,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import { useQuery } from '@tanstack/react-query'\n import { getData } from \"@/utils/getData\";\n import { useRouter } from \"next/router\";\n import Heading from \"@/components/Shared/Heading\";\n-import { Key } from \"react\";\n+import { Key, Suspense } from \"react\";\n import Data from \"@/components/Motorcycle/Data\";\n import Seo from \"@/components/Shared/Seo\";\n import Image from \"next/image\";\n import ErrorComponent from \"@/components/Shared/ErrorComponent\";\n@@ -47,8 +47,10 @@\n             style={{ position: \"absolute\", top: \"80%\", left: 0, zIndex: -1, userSelect: \"none\" }}\n             draggable={false}\n          />\n          <Data content={content} />\n+         <Suspense fallback={<WelcomeLoading />}>\n+\n          <MotorcycleWrapper />\n       </>\n    )\n }\n"
+                },
+                {
+                    "date": 1704357014233,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,28 +13,11 @@\n import { useLoading } from '@/hooks/useLoading';\n import { MotorcycleWrapper } from '@/components/Motorcycle/Data/wrapper';\n \n export default function Home() {\n-   const router = useRouter()\n-   const { slug } = router.query\n \n-   const { data, isLoading, isError } = useQuery({ queryKey: [slug], queryFn: () => getData(`/motorcycles`, slug) })\n-\n-   const loading = useLoading(isLoading, 500)\n-\n-   if (loading) {\n-      return <Loading />\n-   }\n-\n-   if (isError || !data.data.length) {\n-      return <ErrorComponent redirect />\n-   }\n-\n-   const content = data.data[0].attributes;\n    return (\n       <>\n-         <Seo seo={content.seo} />\n-         {/* test */}\n          <Image\n             src=\"/gradients/gradient-hero-motorcycle.png\"\n             alt=\"GradientHero\"\n             fill\n@@ -47,11 +30,10 @@\n             fill\n             style={{ position: \"absolute\", top: \"80%\", left: 0, zIndex: -1, userSelect: \"none\" }}\n             draggable={false}\n          />\n-         <Data content={content} />\n          <Suspense fallback={<WelcomeLoading />}>\n-\n-         <MotorcycleWrapper />\n+            <MotorcycleWrapper />\n+         </Suspense>\n       </>\n    )\n }\n"
+                },
+                {
+                    "date": 1704357025920,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,6 @@\n-import Head from 'next/head'\n-import { useQuery } from '@tanstack/react-query'\n-import { getData } from \"@/utils/getData\";\n-import { useRouter } from \"next/router\";\n-import Heading from \"@/components/Shared/Heading\";\n-import { Key, Suspense } from \"react\";\n-import Data from \"@/components/Motorcycle/Data\";\n-import Seo from \"@/components/Shared/Seo\";\n+import { Suspense } from \"react\";\n import Image from \"next/image\";\n-import ErrorComponent from \"@/components/Shared/ErrorComponent\";\n import WelcomeLoading from \"@/components/Shared/WelcomeLoading\";\n import { MotorcycleWrapper } from '@/components/Motorcycle/Data/wrapper';\n \n export default function Home() {\n"
+                },
+                {
+                    "date": 1704357792387,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,10 @@\n import { Suspense } from \"react\";\n import Image from \"next/image\";\n import WelcomeLoading from \"@/components/Shared/WelcomeLoading\";\n import { MotorcycleWrapper } from '@/components/Motorcycle/Data/wrapper';\n+import { QueryClient } from \"@tanstack/react-query\";\n+import { getData } from \"@/utils/getData\";\n \n export default function Home() {\n    return (\n       <>\n@@ -19,10 +21,23 @@\n             fill\n             style={{ position: \"absolute\", top: \"80%\", left: 0, zIndex: -1, userSelect: \"none\" }}\n             draggable={false}\n          />\n-         <Suspense fallback={<WelcomeLoading />}>\n             <MotorcycleWrapper />\n-         </Suspense>\n       </>\n    )\n }\n+\n+export async function getStaticProps() {\n+   const queryClient = new QueryClient()\n+\n+   await queryClient.prefetchQuery({\n+      queryKey: ['about'],\n+      queryFn: () => getData('/about'),\n+   })\n+\n+   return {\n+      props: {\n+         dehydratedState: dehydrate(queryClient),\n+      },\n+   }\n+}\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1704356374102,

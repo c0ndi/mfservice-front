@@ -1,4 +1,4 @@
-import { useQuery } from '@tanstack/react-query'
+import { QueryClient, dehydrate, useQuery } from '@tanstack/react-query'
 import { getData } from "@/utils/getData";
 import Hero from "@/components/Home/Hero";
 import About from "@/components/Home/About";
@@ -59,4 +59,20 @@ export default function Home() {
          />
       </>
    )
+}
+
+
+export async function getStaticProps() {
+   const queryClient = new QueryClient()
+
+   await queryClient.prefetchQuery({
+      queryKey: ['home'],
+      queryFn: () => getData('/home'),
+   })
+
+   return {
+      props: {
+         dehydratedState: dehydrate(queryClient),
+      },
+   }
 }

@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { useQuery } from '@tanstack/react-query'
+import { QueryClient, dehydrate, useQuery } from '@tanstack/react-query'
 import { getData } from "@/utils/getData";
 import { useRouter } from "next/router";
 import Heading from "@/components/Shared/Heading";
@@ -15,10 +15,7 @@ import Loading from "@/components/Shared/Loading";
 import { useLoading } from '@/hooks/useLoading';
 
 export default function Home() {
-   const router = useRouter()
-   const { slug } = router.query
-
-   const { data, isLoading, isError } = useQuery({ queryKey: [slug], queryFn: () => getData(`/about`) })
+   const { data, isLoading, isError } = useQuery({ queryKey: ["about"], queryFn: () => getData(`/about`) })
 
    const loading = useLoading(isLoading, 500)
 
@@ -66,4 +63,19 @@ export default function Home() {
          <History content={historyComponent} />
       </>
    )
+}
+
+export async function getStaticProps() {
+   const queryClient = new QueryClient()
+
+   await queryClient.prefetchQuery({
+      queryKey: ['about'],
+      queryFn: () => getData('/about'),
+   })
+
+   return {
+      props: {
+         dehydratedState: dehydrate(queryClient),
+      },
+   }
 }

@@ -1,0 +1,26 @@
+{
+    "sourceFile": "pages/motocykle/index.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1704357676540,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1704357684403,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,9 +68,9 @@\n export async function getStaticProps() {\n    const queryClient = new QueryClient()\n \n    await queryClient.prefetchQuery({\n-      queryKey: ['posts', 10],\n+      queryKey: ['motorcycles', 10],\n       queryFn: () => getData('/about'),\n    })\n \n    return {\n"
+                },
+                {
+                    "date": 1704357747145,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n import Loading from \"@/components/Shared/Loading\";\n import { useLoading } from '@/hooks/useLoading';\n \n export default function Home() {\n-   const { data, isLoading, isError } = useQuery({ queryKey: [\"motorcycles\"], queryFn: () => getData(`/about`) })\n+   const { data, isLoading, isError } = useQuery({ queryKey: [\"about\"], queryFn: () => getData(`/about`) })\n \n    const loading = useLoading(isLoading, 500)\n \n    if (loading) {\n@@ -68,9 +68,9 @@\n export async function getStaticProps() {\n    const queryClient = new QueryClient()\n \n    await queryClient.prefetchQuery({\n-      queryKey: ['motorcycles', 10],\n+      queryKey: ['about'],\n       queryFn: () => getData('/about'),\n    })\n \n    return {\n"
+                }
+            ],
+            "date": 1704357676540,
+            "name": "Commit-0",
+            "content": "import Head from 'next/head'\nimport { QueryClient, dehydrate, useQuery } from '@tanstack/react-query'\nimport { getData } from \"@/utils/getData\";\nimport { useRouter } from \"next/router\";\nimport Heading from \"@/components/Shared/Heading\";\nimport { Key } from \"react\";\nimport Link from \"next/link\";\nimport Hero from \"@/components/Motorcycles/Hero\";\nimport Motorcycles from \"@/components/Motorcycles/Motorcycles\";\nimport History from \"@/components/Motorcycles/History\";\nimport Seo from \"@/components/Shared/Seo\";\nimport Image from \"next/image\";\nimport ErrorComponent from \"@/components/Shared/ErrorComponent\";\nimport Loading from \"@/components/Shared/Loading\";\nimport { useLoading } from '@/hooks/useLoading';\n\nexport default function Home() {\n   const router = useRouter()\n   const { slug } = router.query\n\n   const { data, isLoading, isError } = useQuery({ queryKey: [\"motorcycles\"], queryFn: () => getData(`/about`) })\n\n   const loading = useLoading(isLoading, 500)\n\n   if (loading) {\n      return <Loading />\n   }\n\n   if (isError) {\n      return <ErrorComponent />\n   }\n\n   const {\n      heroComponent,\n      motorcyclesComponent,\n      historyComponent,\n      seo\n   } = data.data.attributes;\n\n   return (\n      <>\n         <Seo seo={seo} />\n         <Image\n            src=\"/gradients/gradient-hero-motorcycle.png\"\n            alt=\"GradientHero\"\n            fill\n            draggable={false}\n            style={{ position: \"absolute\", top: 0, zIndex: -1, left: 0, transform: \"translateY(000px)\", userSelect: \"none\" }}\n         />\n         <Image\n            src=\"/gradients/gradient-motorcycles-motorcycle.png\"\n            alt=\"GradientHero\"\n            fill\n            draggable={false}\n            style={{ position: \"absolute\", top: 0, zIndex: -1, left: 0, transform: \"translateY(900px)\", userSelect: \"none\" }}\n         />\n         <Image\n            src=\"/gradients/gradient-faq-home.png\"\n            alt=\"GradientAbout\"\n            fill\n            style={{ position: \"absolute\", top: \"100%\", left: 0, zIndex: -1, userSelect: \"none\", transform: \"translateY(1000px) rotate(180deg)\" }}\n            draggable={false}\n         />\n         <Hero content={heroComponent} />\n         <Motorcycles content={motorcyclesComponent} />\n         <History content={historyComponent} />\n      </>\n   )\n}\n\nexport async function getStaticProps() {\n   const queryClient = new QueryClient()\n \n   await queryClient.prefetchQuery({\n     queryKey: ['posts', 10],\n     queryFn: () => getData('/about'),\n   })\n \n   return {\n     props: {\n       dehydratedState: dehydrate(queryClient),\n     },\n   }\n }"
+        }
+    ]
+}
