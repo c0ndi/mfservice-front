@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 3,
+            "activePatchIndex": 4,
             "patches": [
                 {
                     "date": 1702852571327,
@@ -20,6 +20,10 @@
                 {
                     "date": 1704360824823,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n import Grid from \"@/components/Home/About/Grid\";\n import FaqIcon from \"@/public/icons/faq-icon.svg\";\n import Image from \"next/image\";\n \n-export type About = {\n+export type AboutType = {\n    heading: string;\n    description: string;\n    buttonLabel: string;\n    faqLabel: string;\n"
+                },
+                {
+                    "date": 1704361449273,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n    faqLabel: string;\n    covers: { data: StrapiImageArray[] };\n }\n \n-export default function About({ content }: PropsWithChildren<{ content: About }>) {\n+export default function About({ content }: PropsWithChildren<{ content: AboutType }>) {\n    const { heading, description, buttonLabel, faqLabel, covers } = content;\n    return (\n       // @ts-ignore\n       <section className={s.wrapper} name={\"motocykle\"}>\n"
                 }
             ],
             "date": 1702852571327,

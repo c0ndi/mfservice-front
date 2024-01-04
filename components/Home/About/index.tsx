@@ -17,7 +17,7 @@ export type AboutType = {
    covers: { data: StrapiImageArray[] };
 }
 
-export default function About({ content }: PropsWithChildren<{ content: About }>) {
+export default function About({ content }: PropsWithChildren<{ content: AboutType }>) {
    const { heading, description, buttonLabel, faqLabel, covers } = content;
    return (
       // @ts-ignore

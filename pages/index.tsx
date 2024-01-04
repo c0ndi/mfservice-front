@@ -19,7 +19,6 @@ type Props = {
 }
 
 export default function Home({ data, shared }: Props) {
-   console.log(data)
    if (!data) {
       return <ErrorComponent redirect />
    }
