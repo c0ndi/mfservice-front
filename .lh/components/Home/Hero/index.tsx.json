@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 4,
+            "activePatchIndex": 6,
             "patches": [
                 {
                     "date": 1702852562960,
@@ -24,6 +24,14 @@
                 {
                     "date": 1704360801389,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n    buttonLabel: string;\n    cover: StrapiImage;\n }\n \n-export default function Hero({ content }: PropsWithChildren<{ content: Hero }>) {\n+export default function Hero({ content }: PropsWithChildren<{ content: HeroType }>) {\n    const { heading, description, buttonLink, buttonLabel, cover } = content;\n    return (\n       // @ts-ignore\n       <section className={s.wrapper}>\n"
+                },
+                {
+                    "date": 1704503444846,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n                fill\n                priority\n                placeholder=\"blur\"\n                blurDataURL=\"/loading-screen.png\"\n-               sizes='(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw'\n+               sizes='(max-width: 600px) 100vw, (max-width: 900px) 30vw, 33vw'\n             />\n             {/* <CustomImage\n                alt={\"MotorcycleImage\"}\n                src={getSimpleImageUri(cover)}\n"
+                },
+                {
+                    "date": 1704503489903,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,66 +44,8 @@\n                fill\n                priority\n                placeholder=\"blur\"\n                blurDataURL=\"/loading-screen.png\"\n-               sizes='(max-width: 600px) 100vw, (max-width: 900px) 30vw, 33vw'\n-            />\n-            {/* <CustomImage\n-               alt={\"MotorcycleImage\"}\n-               src={getSimpleImageUri(cover)}\n-               fill\n-            /> */}\n-         </div>\n-      </section>\n-   )\n-}\n-import s from './index.module.scss';\n-\n-import { StrapiImage } from \"@/types/types\";\n-import { PropsWithChildren } from \"react\";\n-import { getSimpleImageUri } from \"@/utils/getSimpleImageUri\";\n-\n-import Link from \"next/link\";\n-import Image from \"next/image\";\n-import Heading from \"@/components/Shared/Heading\";\n-import CustomImage from \"@/components/Shared/CustomImage\";\n-\n-type Hero = {\n-   heading: string;\n-   description: string;\n-   buttonLink: string;\n-   buttonLabel: string;\n-   cover: StrapiImage;\n-}\n-\n-export default function Hero({ content }: PropsWithChildren<{ content: Hero }>) {\n-   const { heading, description, buttonLink, buttonLabel, cover } = content;\n-   return (\n-      // @ts-ignore\n-      <section className={s.wrapper}>\n-\n-         <div className={s.contentWrapper}>\n-            <Heading\n-               heading={heading}\n-               size={\"lg\"}\n-            />\n-            <p className={s.desc}>{description}</p>\n-\n-            <Link href={buttonLink}>\n-               <button className={s.button}>\n-                  {buttonLabel}\n-               </button>\n-            </Link>\n-         </div>\n-\n-         <div className={s.imageWrapper}>\n-            <Image\n-               src={getSimpleImageUri(cover)}\n-               alt={\"Motorcycle image\"}\n-               fill\n-               priority\n-               placeholder=\"blur\"\n-               blurDataURL=\"/loading-screen.png\"\n                sizes='(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw'\n             />\n             {/* <CustomImage\n                alt={\"MotorcycleImage\"}\n"
                 }
             ],
             "date": 1702852562960,

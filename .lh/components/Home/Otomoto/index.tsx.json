@@ -1,0 +1,66 @@
+{
+    "sourceFile": "components/Home/Otomoto/index.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 12,
+            "patches": [
+                {
+                    "date": 1704501875926,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1704501884454,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,9 @@\n import React from 'react'\n \n-export default function Otomoto({}: Props) {\n+export default function Otomoto({ }) {\n   return (\n-    <div>Otomoto</div>\n+    <div>\n+      {/* https://mfservice.otomoto.pl/inventory */}\n+    </div>\n   )\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704501916592,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,10 @@\n+import React from 'react'\n+\n+export default function Otomoto({ }) {\n+  const url = \"https://mfservice.otomoto.pl/inventory\"\n+  return (\n+    <div>\n+      <iframe src={url} title=\"W3Schools Free Online Web Tutorials\"></iframe>\n+    </div>\n+  )\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704501997575,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,11 @@\n import React from 'react'\n+import s from './index.module.scss';\n \n export default function Otomoto({ }) {\n   const url = \"https://mfservice.otomoto.pl/inventory\"\n   return (\n-    <div>\n-      <iframe src={url} title=\"W3Schools Free Online Web Tutorials\"></iframe>\n+    <div className={s.wrapper}>\n+      <iframe src={url} title=\"W3Schools Free Online Web Tutorials\" className=''></iframe>\n     </div>\n   )\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704502107921,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,11 @@\n+import React from 'react'\n+import s from './index.module.scss';\n+\n+export default function Otomoto({ }) {\n+  const otomotoUrl = \"https://mfservice.otomoto.pl/inventory\"\n+  const olxUrl = \"https://www.olx.pl/oferty/uzytkownik/3JZ6Q/\"\n+  return (\n+    <div className={s.wrapper}>\n+    </div>\n+  )\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704502311390,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,13 @@\n import React from 'react'\n import s from './index.module.scss';\n+import Heading from '@/components/Shared/Heading';\n \n export default function Otomoto({ }) {\n   const otomotoUrl = \"https://mfservice.otomoto.pl/inventory\"\n   const olxUrl = \"https://www.olx.pl/oferty/uzytkownik/3JZ6Q/\"\n   return (\n     <div className={s.wrapper}>\n+      <Heading text=\"Sprawdź nasze oferty na\" />\n     </div>\n   )\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704502332289,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,28 +6,8 @@\n   const otomotoUrl = \"https://mfservice.otomoto.pl/inventory\"\n   const olxUrl = \"https://www.olx.pl/oferty/uzytkownik/3JZ6Q/\"\n   return (\n     <div className={s.wrapper}>\n-      <Heading text=\"Sprawdź nasze oferty na\" />\n+      <Heading heading='Gdzie sprzedajemy?' size='md' />\n     </div>\n   )\n-}\n-import React from 'react'\n-import s from './index.module.scss';\n-\n-export default function Otomoto({ }) {\n-  const url = \"https://mfservice.otomoto.pl/inventory\"\n-  return (\n-    <div className={s.wrapper}>\n-      <iframe src={url} title=\"W3Schools Free Online Web Tutorials\" className=''></iframe>\n-    </div>\n-  )\n-}\n-import React from 'react'\n-\n-export default function Otomoto({ }) {\n-  return (\n-    <div>\n-      {/* https://mfservice.otomoto.pl/inventory */}\n-    </div>\n-  )\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704502340111,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,8 @@\n   const otomotoUrl = \"https://mfservice.otomoto.pl/inventory\"\n   const olxUrl = \"https://www.olx.pl/oferty/uzytkownik/3JZ6Q/\"\n   return (\n     <div className={s.wrapper}>\n-      <Heading heading='Gdzie sprzedajemy?' size='md' />\n+      <Heading heading='Gdzie sprzedajemy? (NOWE OFERTY!)' size='md' />\n     </div>\n   )\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704502355635,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,14 @@\n+import React from 'react'\n+import s from './index.module.scss';\n+import Heading from '@/components/Shared/Heading';\n+\n+export default function Otomoto({ }) {\n+  const otomotoUrl = \"https://mfservice.otomoto.pl/inventory\"\n+  const olxUrl = \"https://www.olx.pl/oferty/uzytkownik/3JZ6Q/\"\n+  return (\n+    <div className={s.wrapper}>\n+      <Heading heading='Gdzie sprzedajemy?' size='md' />\n+      <Heading heading='NOWE OFERTY!' size='md' />\n+    </div>\n+  )\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704502420371,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,20 +8,9 @@\n   return (\n     <div className={s.wrapper}>\n       <Heading heading='Gdzie sprzedajemy?' size='md' />\n       <Heading heading='NOWE OFERTY!' size='md' />\n-    </div>\n-  )\n-}\n-import React from 'react'\n-import s from './index.module.scss';\n-import Heading from '@/components/Shared/Heading';\n \n-export default function Otomoto({ }) {\n-  const otomotoUrl = \"https://mfservice.otomoto.pl/inventory\"\n-  const olxUrl = \"https://www.olx.pl/oferty/uzytkownik/3JZ6Q/\"\n-  return (\n-    <div className={s.wrapper}>\n-      <Heading heading='Gdzie sprzedajemy? (NOWE OFERTY!)' size='md' />\n+      <p>Gdzie <span>sprzedajemy</span>? {\"(Nowe oferty!)\"}</p>\n     </div>\n   )\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704502430891,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,8 @@\n     <div className={s.wrapper}>\n       <Heading heading='Gdzie sprzedajemy?' size='md' />\n       <Heading heading='NOWE OFERTY!' size='md' />\n \n-      <p>Gdzie <span>sprzedajemy</span>? {\"(Nowe oferty!)\"}</p>\n+      <p className={s.heading}>Gdzie <span>sprzedajemy</span>? {\"(Nowe oferty!)\"}</p>\n     </div>\n   )\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704502485256,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,10 +6,8 @@\n   const otomotoUrl = \"https://mfservice.otomoto.pl/inventory\"\n   const olxUrl = \"https://www.olx.pl/oferty/uzytkownik/3JZ6Q/\"\n   return (\n     <div className={s.wrapper}>\n-      <Heading heading='Gdzie sprzedajemy?' size='md' />\n-\n       <p className={s.heading}>Gdzie <span>sprzedajemy</span>? {\"(Nowe oferty!)\"}</p>\n     </div>\n   )\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704502490522,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,8 @@\n   const otomotoUrl = \"https://mfservice.otomoto.pl/inventory\"\n   const olxUrl = \"https://www.olx.pl/oferty/uzytkownik/3JZ6Q/\"\n   return (\n     <div className={s.wrapper}>\n-      <p className={s.heading}>Gdzie <span>sprzedajemy</span>? {\"(Nowe oferty!)\"}</p>\n+      <p className={s.heading}>Gdzie <span>sprzedajemy</span>? {\"(NOWE AUKCJE!)\"}</p>\n     </div>\n   )\n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1704501875926,
+            "name": "Commit-0",
+            "content": "import React from 'react'\n\nexport default function Otomoto({}: Props) {\n  return (\n    <div>Otomoto</div>\n  )\n}"
+        }
+    ]
+}

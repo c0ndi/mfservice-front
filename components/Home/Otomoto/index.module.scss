@@ -1,0 +1,53 @@
+@import "@/styles/shared.scss";
+
+.wrapper {
+  padding-bottom: 90px;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.heading {
+  font-weight: 800;
+  z-index: 995;
+  color: #fff;
+  font-size: 32px;
+
+  span {
+    color: var(--primary);
+  }
+}
+
+.desc {
+  font-size: 20px;
+  width: 50%;
+  text-align: center;
+  a {
+    color: var(--primary);
+    font-weight: 600;
+  }
+}
+
+.imageWrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding-top: 60px;
+  }
+
+  .heading {
+    font-size: 24px;
+    padding-bottom: 20px;
+  }
+
+  .desc {
+    font-size: 16px;
+    width: 100%;
+  }
+}

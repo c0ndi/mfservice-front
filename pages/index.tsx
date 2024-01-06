@@ -12,6 +12,7 @@ import Navbar from '@/components/Shared/Navbar';
 import Contact from '@/components/Shared/Contact';
 import Faq from '@/components/Shared/FAQ';
 import Hero from '@/components/Home/Hero';
+import Otomoto from "@/components/Home/Otomoto";
 
 type Props = {
    data: any;
@@ -54,6 +55,7 @@ export default function Home({ data, shared }: Props) {
 
          <main className={"pageWrapper"}>
             <Hero content={heroComponent} />
+            <Otomoto />
             <ServiceStages content={serviceStageComponent} />
             <About content={aboutUsComponent} />
 

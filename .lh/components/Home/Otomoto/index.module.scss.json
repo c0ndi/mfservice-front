@@ -1,0 +1,26 @@
+{
+    "sourceFile": "components/Home/Otomoto/index.module.scss",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1704501980541,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1704501985853,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,6 @@\n @import \"@/styles/shared.scss\";\n \n .wrapper {\n-  position: relative;\n-  display: flex;\n-  align-items: center;\n-  gap: 100px;\n   padding-bottom: 90px;\n   padding-top: 120px;\n-  z-index: 995;\n }\n"
+                },
+                {
+                    "date": 1704502450071,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,4 +3,15 @@\n .wrapper {\n   padding-bottom: 90px;\n   padding-top: 120px;\n }\n+\n+\n+.heading {\n+  font-weight: 800;\n+  z-index: 995;\n+  color: #fff;\n+\n+  span {\n+    color: var(--primary);\n+  }\n+}\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1704501980541,
+            "name": "Commit-0",
+            "content": "@import '@/styles/shared.scss';\n\n.wrapper {\n  position: relative;\n  display: flex;\n  align-items: center;\n  gap: 100px;\n  padding-bottom: 90px;\n  padding-top: 120px;\n  z-index: 995;\n}\n"
+        }
+    ]
+}
