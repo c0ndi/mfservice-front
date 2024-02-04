@@ -9,6 +9,8 @@ import Image from "next/image";
 import Heading from "@/components/Shared/Heading";
 import CustomImage from "@/components/Shared/CustomImage";
 
+import useEmblaCarousel from 'embla-carousel-react'
+
 export type HeroType = {
    heading: string;
    description: string;
@@ -19,6 +21,9 @@ export type HeroType = {
 
 export default function Hero({ content }: PropsWithChildren<{ content: HeroType }>) {
    const { heading, description, buttonLink, buttonLabel, cover } = content;
+
+   const [emblaRef] = useEmblaCarousel()
+
    return (
       // @ts-ignore
       <section className={s.wrapper}>
@@ -38,15 +43,43 @@ export default function Hero({ content }: PropsWithChildren<{ content: HeroType 
          </div>
 
          <div className={s.imageWrapper}>
-            <Image
-               src={getSimpleImageUri(cover)}
-               alt={"Motorcycle image"}
-               fill
-               priority
-               placeholder="blur"
-               blurDataURL="/loading-screen.png"
-               sizes='(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw'
-            />
+            <div className="embla" ref={emblaRef}>
+               <div className="embla__container">
+                  <div className="embla__slide">
+                     <Image
+                        src={getSimpleImageUri(cover)}
+                        alt={"Motorcycle image"}
+                        fill
+                        priority
+                        placeholder="blur"
+                        blurDataURL="/loading-screen.png"
+                        sizes='(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw'
+                     />
+                  </div>
+                  <div className="embla__slide">
+                     <Image
+                        src={getSimpleImageUri(cover)}
+                        alt={"Motorcycle image"}
+                        fill
+                        priority
+                        placeholder="blur"
+                        blurDataURL="/loading-screen.png"
+                        sizes='(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw'
+                     />
+                  </div>
+                  <div className="embla__slide">
+                     <Image
+                        src={getSimpleImageUri(cover)}
+                        alt={"Motorcycle image"}
+                        fill
+                        priority
+                        placeholder="blur"
+                        blurDataURL="/loading-screen.png"
+                        sizes='(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw'
+                     />
+                  </div>
+               </div>
+            </div>
             {/* <CustomImage
                alt={"MotorcycleImage"}
                src={getSimpleImageUri(cover)}
