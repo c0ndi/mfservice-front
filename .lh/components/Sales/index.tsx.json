@@ -1,0 +1,50 @@
+{
+    "sourceFile": "components/Sales/index.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 8,
+            "patches": [
+                {
+                    "date": 1707868892892,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1707868900497,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,7 +3,9 @@\n type Props = {}\n \n export default function Sales({ }: Props) {\n   return (\n-    <div>Sales</div>\n+    <div>\n+      Sales\n+    </div>\n   )\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1707868906583,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,9 @@\n import React from 'react'\n \n-type Props = {}\n+type Props = {\n+  sales: any;\n+}\n \n export default function Sales({ }: Props) {\n   return (\n     <div>\n"
+                },
+                {
+                    "date": 1707868953013,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,17 @@\n+import { StrapiImageArray } from '@/types/types';\n import React from 'react'\n \n type Props = {\n-  sales: any;\n+  sales: {\n+    attributes: {\n+      name: string;\n+      mileage: string;\n+      url: string;\n+      year: string;\n+      images: StrapiImageArray[]\n+    }\n+  }\n }\n \n export default function Sales({ }: Props) {\n   return (\n"
+                },
+                {
+                    "date": 1707868959359,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n       mileage: string;\n       url: string;\n       year: string;\n       images: StrapiImageArray[]\n-    }\n+    }[]\n   }\n }\n \n export default function Sales({ }: Props) {\n"
+                },
+                {
+                    "date": 1707868972611,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     }[]\n   }\n }\n \n-export default function Sales({ }: Props) {\n+export default function Sales({ data}: Props) {\n   return (\n     <div>\n       Sales\n     </div>\n"
+                },
+                {
+                    "date": 1707868980341,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     }[]\n   }\n }\n \n-export default function Sales({ data}: Props) {\n+export default function Sales({ data }: Props) {\n   return (\n     <div>\n       Sales\n     </div>\n"
+                },
+                {
+                    "date": 1707869001869,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,15 +8,15 @@\n       mileage: string;\n       url: string;\n       year: string;\n       images: StrapiImageArray[]\n-    }[]\n-  }\n+    }\n+  }[]\n }\n \n export default function Sales({ sales }: Props) {\n   return (\n     <div>\n-      Sales\n+      {sales.}\n     </div>\n   )\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1707869014979,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,14 @@\n \n export default function Sales({ sales }: Props) {\n   return (\n     <div>\n-      {sales.}\n+      {sales.map((sale, index) => (\n+        <div key={index}>\n+          <h1>{sale.attributes.name}</h1>\n+          <h2>{sale.attributes.mileage}</h2>\n+          <h3>{sale.attributes.year}</h3>\n+          </div>\n+      ))}\n     </div>\n   )\n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1707868892892,
+            "name": "Commit-0",
+            "content": "import React from 'react'\n\ntype Props = {}\n\nexport default function Sales({ }: Props) {\n  return (\n    <div>Sales</div>\n  )\n}"
+        }
+    ]
+}

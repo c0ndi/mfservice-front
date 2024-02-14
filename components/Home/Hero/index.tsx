@@ -1,6 +1,6 @@
 import s from './index.module.scss';
 
-import { StrapiImage } from "@/types/types";
+import { StrapiImage, StrapiImageArray } from "@/types/types";
 import { PropsWithChildren } from "react";
 import { getSimpleImageUri } from "@/utils/getSimpleImageUri";
 
@@ -10,17 +10,18 @@ import Heading from "@/components/Shared/Heading";
 import CustomImage from "@/components/Shared/CustomImage";
 
 import useEmblaCarousel from 'embla-carousel-react'
+import { getSimpleImageUriArray } from '@/utils/getSimpleImageUriArray';
 
 export type HeroType = {
    heading: string;
    description: string;
    buttonLink: string;
    buttonLabel: string;
-   cover: StrapiImage;
+   covers: { data: StrapiImageArray[] };
 }
 
 export default function Hero({ content }: PropsWithChildren<{ content: HeroType }>) {
-   const { heading, description, buttonLink, buttonLabel, cover } = content;
+   const { heading, description, buttonLink, buttonLabel, covers } = content;
 
    const [emblaRef] = useEmblaCarousel()
 
@@ -45,46 +46,21 @@ export default function Hero({ content }: PropsWithChildren<{ content: HeroType 
          <div className={s.imageWrapper}>
             <div className="embla" ref={emblaRef}>
                <div className="embla__container">
-                  <div className="embla__slide">
-                     <Image
-                        src={getSimpleImageUri(cover)}
-                        alt={"Motorcycle image"}
-                        fill
-                        priority
-                        placeholder="blur"
-                        blurDataURL="/loading-screen.png"
-                        sizes='(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw'
-                     />
-                  </div>
-                  <div className="embla__slide">
-                     <Image
-                        src={getSimpleImageUri(cover)}
-                        alt={"Motorcycle image"}
-                        fill
-                        priority
-                        placeholder="blur"
-                        blurDataURL="/loading-screen.png"
-                        sizes='(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw'
-                     />
-                  </div>
-                  <div className="embla__slide">
-                     <Image
-                        src={getSimpleImageUri(cover)}
-                        alt={"Motorcycle image"}
-                        fill
-                        priority
-                        placeholder="blur"
-                        blurDataURL="/loading-screen.png"
-                        sizes='(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw'
-                     />
-                  </div>
+                  {covers.data.map((cover, index) => (
+                     <div className="embla__slide" key={index}>
+                        <Image
+                           src={getSimpleImageUriArray(cover)}
+                           alt={"Motorcycle image"}
+                           priority={index === 0 ? true : false}
+                           sizes="100vw"
+                           fill
+                           placeholder="blur"
+                           blurDataURL="/loading-screen.png"
+                        />
+                     </div>
+                  ))}
                </div>
             </div>
-            {/* <CustomImage
-               alt={"MotorcycleImage"}
-               src={getSimpleImageUri(cover)}
-               fill
-            /> */}
          </div>
       </section>
    )

@@ -1,0 +1,26 @@
+{
+    "sourceFile": "components/Shared/Navbar/index.module.scss",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1707870563474,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1707870568701,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n .outerWrapper {\n   position: absolute;\n   width: 100vw;\n-  padding: 0 16px;\n+  padding: 0 12px;\n   z-index: 999;\n }\n \n .wrapperOpen {\n"
+                },
+                {
+                    "date": 1707870575792,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n   max-width: 1280px;\n   margin: 0 auto;\n   display: flex;\n   justify-content: flex-end;\n-  padding: 24px 23px 24px 0;\n+  padding: 24px 23px 30px 0;\n   width: 100%;\n   z-index: 9999;\n \n   .links {\n"
+                }
+            ],
+            "date": 1707870563474,
+            "name": "Commit-0",
+            "content": "@import \"../../../styles/shared.scss\";\n\n.outerWrapper {\n  position: absolute;\n  width: 100vw;\n  // padding: 0 12px;\n  z-index: 999;\n}\n\n.wrapperOpen {\n  position: fixed;\n  z-index: 9999;\n}\n\n.wrapper {\n  max-width: 1280px;\n  margin: 0 auto;\n  display: flex;\n  justify-content: flex-end;\n  padding: 24px 23px 24px 0;\n  width: 100%;\n  z-index: 9999;\n\n  .links {\n    display: flex;\n    list-style: none;\n    gap: 32px;\n    margin-top: 10px;\n\n    li {\n      font-size: 14px;\n      font-weight: 700;\n      cursor: pointer;\n    }\n  }\n\n  .socials {\n    display: flex;\n    gap: 24px;\n    margin-left: 54px;\n    margin-top: 10px;\n  }\n}\n\n.socialsLabel {\n  font-weight: 500;\n  margin-top: 32px;\n  margin-left: 16px;\n  margin-bottom: 16px;\n  font-size: 15px;\n}\n\n.socialsMenu {\n  display: flex;\n  gap: 32px;\n  bottom: 32px;\n  margin-left: 16px;\n  right: 32px;\n  z-index: 9999;\n}\n\n.socialsMobile {\n  display: none;\n  gap: 24px;\n  margin-right: auto;\n  z-index: 9999;\n}\n\n.hamburger {\n  display: none;\n  z-index: 9999;\n}\n\n.mobileMenu {\n  width: 100%;\n  height: 100lvh;\n  position: fixed;\n  left: -100%;\n  z-index: 9998;\n  top: 0;\n  background-color: #000;\n  transition: left 0.3s;\n\n  * {\n    z-index: 9999;\n  }\n\n  ul {\n    display: flex;\n    flex-direction: column;\n    padding: 15px;\n    margin-top: 15%;\n\n    li {\n      font-size: 18px;\n      border-bottom: 1px solid #222;\n      padding: 12px 0;\n      font-weight: 500;\n    }\n  }\n}\n\n.open {\n  left: 0;\n}\n\n@media (max-width: 769px) {\n  .wrapper {\n    .links {\n      display: none;\n    }\n\n    .socials {\n      display: none;\n    }\n\n    .logo {\n      margin-right: 0;\n    }\n  }\n\n  .socialsMobile {\n    display: flex;\n    margin-left: 32px;\n    margin-top: 8px;\n  }\n\n  .hamburger {\n    display: block;\n    transform: translateX(16px) translateY(-6px);\n  }\n}\n\n@media (max-width: 639px) {\n  .outerWrapper {\n    position: fixed;\n    background: #000;\n  }\n\n  .wrapper {\n    padding: 3px 0;\n    //padding-right: 24px;\n  }\n\n  .hamburger {\n    transform: translateX(16px) translateY(-6px);\n  }\n}\n\n@media (max-width: 539px) {\n  .wrapper {\n    .logo {\n      margin-right: auto;\n\n      p {\n        font-size: 24px;\n\n        span {\n          font-size: 18px;\n        }\n      }\n    }\n  }\n\n  .socialsMobile {\n    display: none;\n  }\n\n  .hamburger {\n    transform: translateX(8px) translateY(-9px);\n  }\n\n  .mobileMenu {\n    margin-top: 10%;\n  }\n}\n"
+        }
+    ]
+}

@@ -13,13 +13,15 @@ import Contact from '@/components/Shared/Contact';
 import Faq from '@/components/Shared/FAQ';
 import Hero from '@/components/Home/Hero';
 import Otomoto from "@/components/Home/Otomoto";
+import Sales from "@/components/Sales";
 
 type Props = {
    data: any;
    shared: any;
+   sales: any;
 }
 
-export default function Home({ data, shared }: Props) {
+export default function Home({ data, shared, sales }: Props) {
    if (!data) {
       return <ErrorComponent redirect />
    }
@@ -55,7 +57,8 @@ export default function Home({ data, shared }: Props) {
 
          <main className={"pageWrapper"}>
             <Hero content={heroComponent} />
-            <Otomoto />
+            <Sales sales={sales.data} />
+            {/* <Otomoto /> */}
             <ServiceStages content={serviceStageComponent} />
             <About content={aboutUsComponent} />
 
@@ -91,11 +94,13 @@ export default function Home({ data, shared }: Props) {
 
 export async function getStaticProps() {
    const data = await getData("/home");
+   const sales = await getData("/sales");
    const shared = await getData("/shared");
 
    return {
       props: {
          data,
+         sales,
          shared
       },
       revalidate: 30,

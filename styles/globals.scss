@@ -119,10 +119,22 @@ html {
   gap: 24px;
 }
 .embla__slide {
-  flex: 0 0 100%;
+  flex: 0 0 80%;
   min-width: 0;
   position: relative;
-  height: 400px;
+  min-height: 400px;
+}
+
+@media (max-width: 800px) {
+  .embla__slide {
+    min-height: 450px;
+  }
+}
+
+@media (max-width: 439px) {
+  .embla__slide {
+    min-height: 250px;
+  }
 }
 
 @media (max-width: 1280px) {
